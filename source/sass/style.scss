@@ -1,0 +1,9 @@
+@import '../../node_modules/normalize-scss/sass/normalize';
+@import '_fonts';
+@import '_vars';
+@import '_global';
+@import 'blocks/header';
+
+h2 {
+  font-family: $popins;
+}
