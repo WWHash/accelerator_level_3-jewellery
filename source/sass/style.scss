@@ -3,7 +3,5 @@
 @import '_vars';
 @import '_global';
 @import 'blocks/header';
-
-h2 {
-  font-family: $popins;
-}
+@import 'blocks/intro';
+@import 'blocks/footer';
