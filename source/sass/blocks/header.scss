@@ -1,4 +1,8 @@
 //top
+.nav .container {
+  padding: 0 45px;
+}
+
 .nav__top {
   display: flex;
   justify-content: space-between;
@@ -171,7 +175,7 @@
 
   .nav__burger {
     display: block;
-    width: 35px;
+    width: 34px;
     height: 22px;
     background-color: transparent;
     border: none;
@@ -210,7 +214,7 @@
   //init block
   .nav__init {
     margin-bottom: 0;
-    flex-basis: 20px;
+    flex-basis: 34px;
   }
 
   .nav__init-item--bas {
@@ -346,6 +350,14 @@
 //*
 //mobile
 @media (max-width: $mobile-width) {
+  .nav .container {
+    padding: 0 15px;
+  }
+
+  .nav__top {
+    min-height: 92px;
+  }
+
   //nav--opened
   .nav--opened .nav__menu-item {
     margin-left: 15px;

@@ -3,6 +3,7 @@
   height: 463px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 121px;
   font-family: $cormorant;
   background-image:
     url("../../img/bgmain1.jpg"),
@@ -18,8 +19,6 @@
 
   h2 {
     margin: 0;
-    // margin-bottom: -6px;
-    // padding-top: 181px;
     font-weight: bold;
     font-size: 45px;
     line-height: 130%;  /* or 58px */
@@ -42,12 +41,30 @@
 
 @media (max-width: $tablet-width) {
   .intro {
+    margin-bottom: 70px;
     background-image: url("../../img/bgmain1__tablet.jpg");
+  }
+
+  .intro__content {
+    margin-right: 18px;
   }
 }
 
 @media (max-width: $mobile-width) {
   .intro {
+    margin-bottom: 60px;
     background-image: url("../../img/bgmain1__mobile.png");
+  }
+
+  .intro__content {
+    margin-right: 0;
+
+    h2 {
+      font-size: 38px;
+    }
+
+    p {
+      font-size: 34px;
+    }
   }
 }

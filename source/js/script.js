@@ -1,4 +1,5 @@
 'use strict';
+// Popap
 var nav = document.querySelector('.nav');
 var navToggle = document.querySelector('.nav__burger');
 
@@ -14,6 +15,7 @@ navToggle.addEventListener('click', function () {
   }
 });
 
+// Jump element
 window.addEventListener('resize', function () {
   var TABLET_MEDIA_QUERY = '(max-width: 1023px)';
   var navList = document.querySelector('.nav__menu-list');
@@ -35,3 +37,57 @@ window.addEventListener('resize', function () {
     initList.insertBefore(login, bas);
   }
 });
+
+// Swiper
+new Swiper('.new-in__slider', {
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      slidesPerGroup: 2
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      slidesPerGroup: 2
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      //Кол-во пролистываемых слайдов
+      slidesPerGroup: 4
+    },
+  },
+
+  navigation: {
+    nextEl: '.new-in__slider-btn--next',
+    prevEl: '.new-in__slider-btn--prev'
+  },
+
+  pagination: {
+    el: '.new-in__slider-pagination',
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + '</span>';
+    },
+  },
+});
+
+// Accordion
+
+var items = document.querySelectorAll('.questions__accordion-trigger');
+var item = document.querySelectorAll('.questions__accordion-item');
+
+items.forEach(function (item) {
+  item.addEventListener('click', function () {
+    var parent = item.parentNode;
+    if (parent.classList.contains('questions__accordion-item--active')) {
+      parent.classList.remove('questions__accordion-item--active');
+    }
+    else {
+      document.querySelectorAll('.questions__accordion-item')
+        .forEach((child) => child.classList.remove('questions__accordion-item--active'))
+      parent.classList.add('questions__accordion-item--active');
+    }
+  })
+})

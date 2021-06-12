@@ -1,0 +1,128 @@
+.questions {
+  margin-bottom: 108px;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 48px;
+    font-family: $cormorant;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 130%;/* or 44px */
+    color: $main;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+}
+
+.questions__accordion {
+  max-width: 970px;
+  margin: 0 auto;
+  border: 1px solid #a87b62;
+  border-bottom: none;
+}
+
+// Item
+.questions__accordion-item {
+  padding: 44px 43px 43px 43px;
+  border-bottom: 1px solid #a87b62;
+}
+
+// Тригер
+.questions__accordion-trigger {
+  display: flex;
+  cursor: pointer;
+
+
+  h3 {
+    margin: 0;
+    font-family: $poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;/* or 23px */
+  }
+
+  &:hover svg,
+  &:focus svg {
+    stroke: $footer-hover;
+  }
+}
+
+// Кнопка аккордиона
+.questions__accordion-btn {
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+
+  svg {
+    fill: none;
+    stroke: #a87b62;
+  }
+}
+
+// Content
+.questions__accordion-content {
+  padding: 9px 351px 31px 7px;
+  font-family: $poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%; /* or 21px */
+  border-top: none;
+  display: none;
+}
+
+// Active accordion
+.questions__accordion-item--active .questions__accordion-btn {
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.questions__accordion-item--active .questions__accordion-content {
+  display: block;
+  padding-bottom: 0;
+}
+
+//*
+//tablet
+@media (max-width: $tablet-width) {
+  .questions {
+    margin-bottom: 75px;
+  }
+  // Item
+  .questions__accordion-item {
+    padding: 43px 49px 44px 49px;
+  }
+
+  // Content
+  .questions__accordion-content {
+    padding: 27px 7px 21px 0;
+  }
+}
+
+//*
+//mobile
+@media (max-width: $mobile-width) {
+  .questions {
+    margin-bottom: 59px;
+    h2 {
+      margin-bottom: 28px;
+    }
+  }
+
+  .questions__accordion-item {
+    padding: 17px 20px 24px 25px;
+}
+
+.questions__accordion-trigger h3 {
+  padding-right: 5px;
+  font-size: 16px;
+}
+
+  .questions__accordion-content {
+    padding: 18px 19px 21px 0;
+    font-size: 14px;
+    line-height: 140%;
+  }
+}

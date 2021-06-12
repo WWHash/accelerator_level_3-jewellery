@@ -1,6 +1,11 @@
 .footer {
   background-color: $black;
+  padding-top: 90px;
   color: $white;
+
+  .container {
+    padding: 0 45px;
+  }
 }
 
 .footer__wrapper {
@@ -13,7 +18,6 @@
 .footer__form {
   width: 43%;
   margin-left: 6px;
-  padding-top: 90px;
 
   h2 {
     margin: 0;
@@ -99,7 +103,7 @@
 .footer__menu {
   display: flex;
   width: 440px;
-  padding-top: 98px;
+  padding-top: 6px;
 }
 
 .footer__menu-list {
@@ -137,7 +141,7 @@
   width: 119px;
   margin: 0;
   padding: 0;
-  padding-top: 97px;
+  padding-top: 6px;
   list-style: none;
 }
 
@@ -175,25 +179,57 @@
 //*
 //tablet
 @media (max-width: $tablet-width) {
+  .footer {
+    padding-top: 50px;
+
+    .container {
+      padding: 0 40px;
+    }
+  }
   .footer__wrapper {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
 
   .footer__form {
-    width: 80%;
+    width: 90%;
+  }
+
+  .footer__menu {
+    width: 464px;
+    padding-top: 49px;
+  }
+
+  .footer__menu-list {
+    padding: 0 10px 0 5px;
+    margin: 0 71px 0 0;
+  }
+
+  .footer__menu__item {
+    padding: 0;
+    margin-bottom: 22px;
+  }
+
+  .social {
+    padding-top: 48px;
   }
 }
 
 //*
 //mobile
 @media (max-width: $mobile-width) {
+  .footer {
+    .container {
+      padding: 0 15px;
+    }
+  }
   .footer__wrapper {
     flex-direction: column;
   }
 
   .footer__form {
     width: 100%;
+    margin-left: 0;
   }
 
   .footer__menu {
