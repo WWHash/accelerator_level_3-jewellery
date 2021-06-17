@@ -5,6 +5,10 @@ body {
 
 body {
   margin: 0;
+  font-family: $poppins;
+  font-size: 16px;
+  line-height: 130%;
+  color: $main;
 }
 .wrapper {
   display: flex;

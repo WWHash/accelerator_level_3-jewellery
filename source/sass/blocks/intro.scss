@@ -1,22 +1,31 @@
-.intro {
-  display: flex;
+.title {
   height: 463px;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 121px;
   font-family: $cormorant;
-  background-image:
-    url("../../img/bgmain1.jpg"),
-    url("../../img/bgmain2.jpg");
-
+  background-color: $brown;
+  background-image: url("../../img/bgmain1.jpg");
+  background-color: rgba(black, 0.8);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: $white;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/bgmain1@2x.jpg");
-  }
+      background-image: url("../../img/bgmain1@2x.jpg");
+    }
+}
 
+.title__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 0.5);
+
+}
+
+.title__content {
   h2 {
     margin: 0;
     font-weight: bold;
@@ -26,7 +35,6 @@
     text-align: center;
     letter-spacing: 0.027em;
   }
-
   p {
     margin: 0;
     margin-top: -6px;
@@ -39,24 +47,55 @@
   }
 }
 
+// title catalog.html
+.title--catalog {
+  max-height: 261px;
+  margin-bottom: 80px;
+  background-image: url("../../img/bg-intro-des@1x.jpg");
+
+  h2  {
+    font-size: 34px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+}
+
 @media (max-width: $tablet-width) {
-  .intro {
+  .title {
     margin-bottom: 70px;
     background-image: url("../../img/bgmain1__tablet.jpg");
   }
 
-  .intro__content {
+  .title--catalog {
+    background-image: url("../../img/bg-intro-tab@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/bg-intro-tab@2x.jpg");
+    }
+  }
+
+  .title__content {
     margin-right: 18px;
   }
 }
 
 @media (max-width: $mobile-width) {
-  .intro {
+  .title {
     margin-bottom: 60px;
     background-image: url("../../img/bgmain1__mobile.png");
   }
 
-  .intro__content {
+  .title--catalog {
+    background-image: url("../../img/bg-intro-mob@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/bg-intro-mob@2x.jpg");
+    }
+  }
+
+  .title__content {
     margin-right: 0;
 
     h2 {
@@ -65,6 +104,18 @@
 
     p {
       font-size: 34px;
+    }
+  }
+
+  .title--catalog {
+    h2 {
+      font-size: 34px;
+      line-height: 130%;
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 120%;
     }
   }
 }

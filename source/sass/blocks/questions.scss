@@ -44,7 +44,7 @@
 
   &:hover svg,
   &:focus svg {
-    stroke: $footer-hover;
+    stroke: $brown;
   }
 }
 
@@ -90,6 +90,7 @@
   .questions {
     margin-bottom: 75px;
   }
+
   // Item
   .questions__accordion-item {
     padding: 43px 49px 44px 49px;

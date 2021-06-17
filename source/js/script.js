@@ -1,5 +1,5 @@
 'use strict';
-// Popap
+// Mobile menu
 var nav = document.querySelector('.nav');
 var navToggle = document.querySelector('.nav__burger');
 
@@ -40,44 +40,57 @@ window.addEventListener('resize', function () {
 
 // Swiper
 new Swiper('.new-in__slider', {
+  navigation: {
+    nextEl: '.new-in__slider-btn--next',
+    prevEl: '.new-in__slider-btn--prev'
+  },
+
   breakpoints: {
     320: {
+      pagination: {
+        el: '.new-in__slider-pagination',
+        type: 'fraction',
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
+        },
+      },
       slidesPerView: 2,
       spaceBetween: 30,
       slidesPerGroup: 2
     },
     768: {
+      pagination: {
+        el: '.new-in__slider-pagination',
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      },
       slidesPerView: 2,
       spaceBetween: 30,
       slidesPerGroup: 2
     },
     1024: {
+      pagination: {
+        el: '.new-in__slider-pagination',
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      },
       slidesPerView: 4,
       spaceBetween: 30,
       //Кол-во пролистываемых слайдов
       slidesPerGroup: 4
     },
   },
-
-  navigation: {
-    nextEl: '.new-in__slider-btn--next',
-    prevEl: '.new-in__slider-btn--prev'
-  },
-
-  pagination: {
-    el: '.new-in__slider-pagination',
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
-  },
 });
 
-// Accordion
-
+// Accordion index.html
 var items = document.querySelectorAll('.questions__accordion-trigger');
 var item = document.querySelectorAll('.questions__accordion-item');
-
 items.forEach(function (item) {
   item.addEventListener('click', function () {
     var parent = item.parentNode;
@@ -91,3 +104,24 @@ items.forEach(function (item) {
     }
   })
 })
+
+// Accordion catalog.html
+var filterTrigger = document.querySelectorAll('.filter__accordion-trigger');
+// var filterItem = document.querySelectorAll('.filter__accordion-item');
+
+filterTrigger.forEach(function (item) {
+  item.addEventListener('click', function () {
+    var parent = item.parentNode;
+    parent.classList.toggle('filter__accordion-item--active');
+  })
+})
+
+// Popap - login
+var body = document.querySelector('body');
+var popap = body.querySelector('.popap-login');
+var openPopap = body.querySelector('.nav__init-link--login');
+var closePopap = body.querySelector('.popap-login__close-btn');
+
+openPopap.addEventListener('click', function () {
+  openPopap.classList.add('popap-login.open');
+});

@@ -16,7 +16,7 @@
 
 //input search
 .nav__search {
-  flex: 0 0 178px;
+  flex: 0 0 200px;
   margin-bottom: 10px;
 
   form {
@@ -68,7 +68,6 @@
 //logo
 .nav__logo {
   margin-top: 15px;
-  margin-right: 56px;
 
   svg {
     fill: #a87b62;
@@ -82,13 +81,13 @@
 
 //init block
 .nav__init {
-  flex: 0 0 150px;
+  flex: 0 0 200px;
   margin-bottom: 11px;
 }
 
 .nav__init-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
 
   a {
@@ -110,7 +109,7 @@
 }
 
 .nav__init-item {
-  padding-right: 7px;
+  padding-right: 9px;
   padding-left: 26px;
   box-sizing: border-box;
 }
@@ -162,7 +161,6 @@
   display: none;
 }
 
-//*
 //tablet
 @media (max-width: $tablet-width) {
   .nav__top {
@@ -202,7 +200,7 @@
     margin-top: 4px;
 
     svg {
-      fill: #a87b62;
+      fill: $brown;
     }
 
     &:hover svg,
@@ -210,13 +208,11 @@
       fill: $footer-hover;
     }
   }
-
   //init block
   .nav__init {
     margin-bottom: 0;
     flex-basis: 34px;
   }
-
   .nav__init-item--bas {
     margin-left: auto;
     padding: 0;
@@ -237,7 +233,6 @@
       stroke: $footer-hover;
     }
   }
-
   //open-menu
   .nav--opened {
     background-color: #a87b62;
@@ -298,7 +293,6 @@
     line-height: 23px;
     color: rgba($white, 0.75);
   }
-
   //opened-search
   .nav--opened .nav__search {
     display: block;
@@ -315,14 +309,12 @@
       background-color: rgba($white, 0.15);
     }
   }
-
   //opened-logo
   .nav--opened .nav__logo {
     svg {
       fill: $white;
     }
   }
-
   //opened-login
   .nav--opened .nav__init-item--bas {
     svg {
@@ -347,7 +339,6 @@
   }
 }
 
-//*
 //mobile
 @media (max-width: $mobile-width) {
   .nav .container {
