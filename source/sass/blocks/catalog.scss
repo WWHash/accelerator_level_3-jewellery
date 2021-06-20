@@ -293,18 +293,29 @@
   }
 
   .catalog__controls.container {
-    padding-left: 45px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 75px;
   }
 }
 
 // Mobile
 @media (max-width: $mobile-width) {
+  .catalog__box {
+    margin-bottom: 28px;
+  }
+  .catalog__btn-filter {
+    margin-bottom: 40px;
+  }
+
   .catalog__list {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    row-gap: 21px;
   }
 
   .catalog__card-image {
+    margin-bottom: 17px;
     img {
       height: 136px;
     }
@@ -313,6 +324,7 @@
   .catalog__controls.container {
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 65px;
   }
 
   .catalog__controls-btn {

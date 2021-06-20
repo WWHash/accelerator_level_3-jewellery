@@ -14,7 +14,6 @@
       background-image: url("../../img/bgmain1@2x.jpg");
     }
 }
-
 .title__wrapper {
   display: flex;
   justify-content: center;
@@ -55,13 +54,16 @@
 
   h2  {
     font-size: 34px;
+    letter-spacing: 0;
   }
 
   p {
     font-size: 22px;
+    text-transform:initial;
   }
 }
 
+// Tablet
 @media (max-width: $tablet-width) {
   .title {
     margin-bottom: 70px;
@@ -69,18 +71,23 @@
   }
 
   .title--catalog {
+    margin-bottom: 50px;
     background-image: url("../../img/bg-intro-tab@1x.jpg");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/bg-intro-tab@2x.jpg");
     }
+    h2 {
+      margin-bottom: 9px;
+    }
   }
 
   .title__content {
-    margin-right: 18px;
+    margin-bottom: 5px;
   }
 }
 
+// Mobile
 @media (max-width: $mobile-width) {
   .title {
     margin-bottom: 60px;
@@ -108,12 +115,16 @@
   }
 
   .title--catalog {
+    margin-bottom: 40px;
     h2 {
+      margin-bottom: 4px;
       font-size: 34px;
       line-height: 130%;
     }
 
     p {
+      width: 80%;
+      margin: 0 auto;
       font-size: 22px;
       line-height: 120%;
     }

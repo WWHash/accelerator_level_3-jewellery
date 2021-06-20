@@ -1,47 +1,41 @@
 // =Login popap=
-.popap-login {
+.popup-login {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(black, 0.8);
-  z-index: 20;
-  transition: all 0.8s ease-in-out 0s;
-
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
+  transition: .8s;
+  background-color: rgba($black, 0.25);
+  z-index: 5;
 }
-
-.popap-login:target {
+.popup-login--active {
   opacity: 1;
   visibility: visible;
 }
-
-.popap-login:target .popap-login__content {
-  transform: translate(0px, 0px);
+.popup-login--active .popup-login__dialog {
+  transform: translateY(0);
   opacity: 1;
-}
+  }
 
-.popap-login__wrapper {
+.popup-login__dialog {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100%;
-  padding: 30px 10px;
-}
-
-.popap-login__content {
-  position: relative;
-  max-width: 430px;
+  flex-direction: column;
+  width: 430px;
   background-color: #f0eae4;
+  overflow: hidden;
+  transform: translateY(-50px);
+  transition: .8s;
   box-shadow: 0px 5px 32px rgba(226, 221, 215, 0.24);
-  transition: all 0.8s ease-in-out 0s;
-  opacity: 0;
-  transform: translate(0px, -100%);
-
+  z-index: 10;
   h2 {
     margin: 0;
+    margin-top: 60px;
     margin-bottom: 20px;
     font-family: $cormorant;
     font-weight: bold;
@@ -53,7 +47,7 @@
 }
 
 // Popap close
-.popap-login__close {
+.popup-login__close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -93,10 +87,9 @@
     }
   }
 }
-
 // Form
-.popap-login__form {
-  padding: 60px 45px;
+.popup-login__form {
+  padding: 0 45px;
 
   form {
     display: flex;
@@ -137,8 +130,7 @@
     }
   }
 }
-
-.popap-login__form-fields {
+.popup-login__form-fields {
   margin-bottom: 20px;
 
   a {
@@ -157,24 +149,291 @@
     }
   }
 }
+.popup-login__signup {
+  margin-bottom: 55px;
 
-.popap-login__signup {
-  text-align: center;
-  font-family: $poppins;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  color: $grey;
+  p {
+    margin: 0;
+    text-align: center;
+    font-family: $poppins;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $grey;
+  }
 
   a {
     display: inline-block;
     padding-left: 6px;
     color: $main;
     vertical-align: middle;
+    cursor: pointer;
 
     &:hover,
     &:focus {
       color: $footer-hover;
     }
+  }
+}
+
+//***
+// Modal add
+.modal-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s;
+  background-color: rgba($black, 0.25);
+  z-index: 10;
+}
+
+.modal-add__dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: $white;
+  overflow: hidden;
+  transform: translateY(-50px);
+  transition: .2s;
+  z-index: 20;
+
+  h2 {
+    margin: 0;
+    margin-top: 55px;
+    font-family: $cormorant;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 130%;
+    text-align: center;
+  }
+}
+
+.modal-add--active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-add--active .modal-add__dialog {
+  transform: translateY(0);
+}
+
+.modal-add__btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  button {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &::before,
+    &::after {
+      position: absolute;
+      top: 4px;
+      left: -1px;
+      width: 16px;
+      height: 2px;
+      background-color: $main;
+      transform: rotate(45deg);
+      content: '';
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover::before,
+    &:focus::before,
+    &:hover::after,
+    &:focus::after {
+      background-color: $brown;
+    }
+    &:active::before,
+    &:active::after {
+      background-color: rgba($brown, 0.5);
+    }
+  }
+}
+
+.modal-add__card {
+  display: flex;
+  padding: 55px 35px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f6f5f4;
+}
+.modal-add__card-img {
+  width: 84px;
+  margin-right: 20px;
+}
+.modal-add__card-text {
+  h3 {
+    margin: 0 0 10px;
+    font-family: $cormorant;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  span {
+    font-family: $poppins;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 130%;
+  }
+}
+.modal-add__card-option {
+  width: 14px;
+  margin-left: auto;
+}
+.modal-add__card-option-btn {
+  button {
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      width: 14px;
+      height: 2px;
+      background-color: $grey;
+      content: '';
+    }
+
+    &:hover::before,
+    &:focus::before,
+    &:hover::after,
+    &:focus::after {
+      background-color: $brown;
+    }
+  }
+}
+.modal-add__card-option-btn--plus {
+  button {
+    &::after {
+      position: absolute;
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 14px;
+      height: 2px;
+      background-color: $grey;
+      content: '';
+      transform: rotate(90deg);
+    }
+  }
+}
+.modal-add__card-option-out {
+  margin-bottom: 10px;
+  input {
+    font-family: $poppins;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 130%;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.modal-add__info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35px;
+  margin-bottom: 40px;
+
+  p {
+    margin: 0;
+    font-family: $poppins;
+    font-size: 14px;
+    line-height: 130%;
+  }
+}
+.modal-add__info-card {
+  p {
+    font-weight: normal;
+  }
+}
+.modal-add__info-total {
+  p {
+    font-weight: 500;
+  }
+}
+
+.modal-add__buttons {
+  display: flex;
+  column-gap: 30px;
+  padding: 0 35px;
+  margin-bottom: 55px;
+
+  a {
+    display: block;
+  }
+}
+.modal-add__btn--continue {
+  width: 50%;
+  text-align: center;
+
+  a {
+    background-color: $white;
+    color: $main;
+  }
+}
+.modal-add__btn--checkout {
+  width: 50%;
+  text-align: center;
+}
+
+// Mobile
+@media (max-width: $mobile-width) {
+  .popup-login__dialog {
+    width: 270px;
+  }
+  .popup-login__form {
+    padding: 0 15px;
+  }
+
+  .modal-add__dialog {
+    width: 290px;
+
+    h2 {
+      margin-top: 45px;
+    }
+  }
+  .modal-add__card {
+    padding: 40px 15px 30px 15px;
+  }
+  .modal-add__info {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+  .modal-add__info-card {
+    margin-bottom: 20px;
+  }
+
+  .modal-add__buttons {
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 0 15px;
+  }
+
+  .modal-add__btn--continue {
+    width: 100%;
+  }
+  .modal-add__btn--checkout {
+    width: 100%;
   }
 }

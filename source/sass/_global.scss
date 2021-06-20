@@ -10,6 +10,9 @@ body {
   line-height: 130%;
   color: $main;
 }
+body.lock {
+  overflow: hidden;
+}
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -57,7 +60,7 @@ ol {
   list-style: none;
 }
 
-.visually-hidden {
+.hidden {
   position: absolute;
   width: 1px;
   height: 1px;

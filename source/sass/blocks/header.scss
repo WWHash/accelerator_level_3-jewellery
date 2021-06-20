@@ -344,6 +344,12 @@
   .nav .container {
     padding: 0 15px;
   }
+  .nav__logo {
+    svg {
+      width: 80px;
+      height: 55px;
+    }
+  }
 
   .nav__top {
     min-height: 92px;

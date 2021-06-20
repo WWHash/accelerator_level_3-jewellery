@@ -18,7 +18,7 @@
         <div class="nav__top">
 
           <button class="nav__burger">
-            <span class="visually-hidden">открыть-закрыть</span>
+            <span class="hidden">открыть-закрыть</span>
             <svg width="25" height="18" viewBox="0 0 25 18">
               <use xlink:href="img/sprite_auto.svg#icon-burger"></use>
             </svg>
@@ -48,7 +48,7 @@
           <div class="nav__init">
             <div class="nav__init-list">
               <div class="nav__init-item nav__init-item--login">
-                <a class="nav__init-link nav__init-link--login" href="#popap-login">Login</a>
+                <a class="nav__init-link nav__init-link--login" href="login.html">Login</a>
               </div>
               <div class="nav__init-item nav__init-item--bas">
                 <a class="nav__init-link nav__init-link--bas" href="#">
@@ -101,7 +101,7 @@
 
   <div class="wrapper">
     <main class="main">
-      <h1 class="visually-hidden">Perfection</h1>
+      <h1 class="hidden">Perfection</h1>
 
       <section class="title">
         <div class="title__wrapper">
@@ -126,13 +126,13 @@
               <svg width="30" height="11" viewBox="0 0 30 11">
                 <use xlink:href="img/sprite_auto.svg#icon-leftarrow"></use>
               </svg>
-              <span class="visually-hidden">next</span>
+              <span class="hidden">next</span>
             </button>
             <button class="new-in__slider-btn new-in__slider-btn--next" type="button">
               <svg width="30" height="11" viewBox="0 0 30 11">
                 <use xlink:href="img/sprite_auto.svg#icon-rightarrow"></use>
               </svg>
-              <span class="visually-hidden">prev</span>
+              <span class="hidden">prev</span>
             </button>
           </div>
 
@@ -438,7 +438,7 @@
 
             <div class="questions__accordion-item questions__accordion-item--active">
               <div class="questions__accordion-trigger">
-                <h3>What materials are the jewellery made of?</h3>
+                <h3>What materials are<span>the jewellery made of?</span></h3>
                 <button class="questions__accordion-btn" type="button">
                   <svg width="17" height="10" viewBox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
@@ -453,7 +453,7 @@
 
             <div class="questions__accordion-item">
               <div class="questions__accordion-trigger">
-                <h3>Which countries do you deliver to?</h3>
+                <h3>Which countries <span>do you deliver to?</span></h3>
                 <button class="questions__accordion-btn" type="button">
                   <svg width="17" height="10" viewBox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
@@ -468,7 +468,7 @@
 
             <div class="questions__accordion-item">
               <div class="questions__accordion-trigger">
-                <h3>What are the payment methods?</h3>
+                <h3>What are the <span>payment methods?</span></h3>
                 <button class="questions__accordion-btn" type="button">
                   <svg width="17" height="10" viewBox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
@@ -483,7 +483,7 @@
 
             <div class="questions__accordion-item">
               <div class="questions__accordion-trigger">
-                <h3>Can I return the jewellery if it didn’t fit me?</h3>
+                <h3>Can I return the <span>jewellery if it didn’t fit me?</span></h3>
                 <button class="questions__accordion-btn" type="button">
                   <svg width="17" height="10" viewBox="0 0 17 10">
                     <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
@@ -630,8 +630,7 @@
             </form>
           </div>
 
-          <section class="footer__menu">
-            <h2 class="visually-hidden">Меню в футуре</h2>
+          <div class="footer__menu">
             <ul class="footer__menu-list">
               <li class="footer__menu__item">
                 <a class="footer__menu__link" href="#">Ordering & Payment</a>
@@ -660,7 +659,7 @@
                 <a class="footer__menu__link" href="#">Contact Us</a>
               </li>
             </ul>
-          </section>
+          </div>
 
           <ul class="social">
             <li class="social__item">
@@ -702,42 +701,43 @@
     </footer>
   </div>
 
-  <section id="popap-login" class="popap-login">
-    <div class="popap-login__wrapper">
-      <div class="popap-login__content">
-        <div class="popap-login__image popap-login__image">
-          <picture>
-            <img src="img/popap-desktop@1x.jpg" width="430" height="138" alt="popap-image">
-          </picture>
-        </div>
+  <section class="popup-login">
+    <div class="popup-login__dialog">
 
-        <a class="popap-login__close" href="#header">
-          <button class="popap-login__close-btn" type="button">
-            <span class="visually-hidden">Закрыть</span>
-          </button>
-        </a>
-
-
-        <div class="popap-login__form">
-          <form action="https://echo.htmlacademy.ru" method="GET">
-            <h2>Log In</h2>
-            <div class="popap-login__form-fields">
-              <label class="visually-hidden" for="input-1">Введие почту</label>
-              <input type="email" name="mail" id="input-1" placeholder="Your E-mail" required>
-            </div>
-            <div class="popap-login__form-fields">
-              <label class="visually-hidden" for="input-2">Введите пароль</label>
-              <input type="password" name="password" id="input-2" placeholder="Password" required>
-              <a href="#">Forgot your password?</a>
-            </div>
-            <button type="button">Log In</button>
-            <p class="popap-login__signup">Don’t have an account?<a>Sign up</a></p>
-          </form>
-        </div>
-
+      <div class="popup-login__image">
+        <picture>
+          <img src="img/popap-desktop@1x.jpg" width="430" height="138" alt="popap-image">
+        </picture>
       </div>
+      <h2>Log In</h2>
+
+      <div class="popup-login__close">
+        <button class="popup-login__close-btn close-popup" type="button">
+          <span class="hidden">Закрыть</span>
+        </button>
+      </div>
+
+      <div class="popup-login__form">
+        <form action="https://echo.htmlacademy.ru" method="GET">
+          <div class="popup-login__form-fields">
+            <label class="hidden" for="input-1">Введие почту</label>
+            <input type="email" name="mail" id="input-1" placeholder="Your E-mail" required>
+          </div>
+          <div class="popup-login__form-fields">
+            <label class="hidden" for="input-2">Введите пароль</label>
+            <input type="password" name="password" id="input-2" placeholder="Password" required>
+            <a href="#">Forgot your password?</a>
+          </div>
+          <button type="button">Log In</button>
+        </form>
+      </div>
+      <div class="popup-login__signup">
+        <p>Don’t have an account?<a>Sign up</a></p>
+      </div>
+
     </div>
   </section>
+
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>

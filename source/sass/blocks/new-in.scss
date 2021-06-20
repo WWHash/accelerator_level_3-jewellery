@@ -3,6 +3,10 @@
   margin-bottom: 117px;
 }
 
+.new-in--product-card {
+  margin-bottom: 126px;
+}
+
 .new-in__title {
   h2 {
     margin: 0;
@@ -143,6 +147,10 @@
     margin-bottom: 66px;
   }
 
+  .new-in--product-card {
+    margin-bottom: 75px;
+  }
+
   .new-in__title {
     h2 {
       margin-bottom: 21px;
@@ -172,6 +180,10 @@
 @media (max-width: $mobile-width) {
   .new-in {
     margin-bottom: 55px;
+  }
+
+  .new-in--product-card {
+    margin-bottom: 66px;
   }
 
   .new-in__link-all {
