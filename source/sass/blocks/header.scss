@@ -25,15 +25,15 @@
 
   input {
     padding-left: 34px;
-    // background-image: url("../../img/icon-search.svg");
-    // background-repeat: no-repeat;
-    // background-position: 3% 50%;
+    background-image: url("../../img/icon-search.svg");
+    background-repeat: no-repeat;
+    background-position: 4% 48%;
     border: none;
     cursor: pointer;
 
     &:hover::placeholder,
     &:hover::placeholder {
-      color: $footer-hover;
+      color: $brown;
     }
   }
 
@@ -75,7 +75,7 @@
 
   &:hover svg,
   &:focus svg {
-    fill: $footer-hover;
+    fill: $main;
   }
 }
 
@@ -89,23 +89,6 @@
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-
-  a {
-    font-family: $poppins;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    color: $main;
-
-    &:hover,
-    &:hover {
-      color: $footer-hover;
-    }
-
-    &:active {
-      color: rgba($footer-hover, 0.3);
-    }
-  }
 }
 
 .nav__init-item {
@@ -116,6 +99,23 @@
 
 .nav__init-item--bas svg {
   display: none;
+}
+
+.nav__init-link {
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $main;
+
+  &:hover,
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    color: rgba($brown, 0.3);
+  }
 }
 
 //navigation
@@ -149,11 +149,11 @@
 
   &:hover,
   &:focus {
-    color: $footer-hover;
+    color: $brown;
   }
 
   &:active {
-    color: rgba($footer-hover, 0.3);
+    color: rgba($brown, 0.3);
   }
 }
 
@@ -175,11 +175,15 @@
     display: block;
     width: 34px;
     height: 22px;
+    padding: 0;
     background-color: transparent;
     border: none;
     cursor: pointer;
 
     svg {
+      display: block;
+      width: 25px;
+      height: 18px;
       stroke: #1D1613;
     }
 

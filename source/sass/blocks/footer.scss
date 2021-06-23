@@ -61,10 +61,10 @@
 
     &:hover,
     &:focus {
-      border-color: $footer-hover;
+      border-color: $brown;
 
       &::placeholder {
-        color: $footer-hover;
+        color: $brown;
       }
     }
   }
@@ -91,12 +91,12 @@
   }
 
   &:hover svg {
-    stroke: $footer-hover;
+    stroke: $brown;
   }
 
   &:hover {
-    color: $footer-hover;
-    border-bottom: 1px solid $footer-hover;
+    color: $brown;
+    border-bottom: 1px solid $brown;
   }
 }
 
@@ -125,11 +125,11 @@
 
   &:hover,
   &:focus {
-    color: $footer-hover;
+    color: $brown;
     }
 
   &:active {
-    color: rgba($footer-hover,0.5);
+    color: rgba($brown, 0.5);
   }
 }
 

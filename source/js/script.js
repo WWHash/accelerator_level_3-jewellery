@@ -16,27 +16,18 @@ navToggle.addEventListener('click', function () {
 });
 
 // Jump element
-window.addEventListener('resize', function () {
-  const TABLET_MEDIA_QUERY = '(max-width: 1023px)';
+const TABLET_MEDIA_QUERY = 1023;
+
+if (window.screen.width < TABLET_MEDIA_QUERY) {
   let navList = document.querySelector('.nav__menu-list');
   let navListHidden = document.querySelector('.nav__menu-list--hidden');
   let navMenu = document.querySelector('.nav__menu');
-  let top = document.querySelector('.nav__top');
-  let logo = top.querySelector('.nav__logo');
-  let initList = top.querySelector('.nav__init-list');
-  let bas = document.querySelector('.nav__init-item--bas');
   let search = document.querySelector('.nav__search');
   let login = document.querySelector('.nav__init-item--login');
 
-  if (window.matchMedia(TABLET_MEDIA_QUERY).matches) {
-    navMenu.insertBefore(search, navList);
-    navMenu.insertBefore(login, navListHidden);
-  }
-  else {
-    top.insertBefore(search, logo);
-    initList.insertBefore(login, bas);
-  }
-});
+  navMenu.insertBefore(search, navList);
+  navMenu.insertBefore(login, navListHidden);
+}
 
 // Swiper
 new Swiper('.new-in__slider', {
@@ -115,61 +106,55 @@ filterTrigger.forEach(function (item) {
     parent.classList.toggle('filter__accordion-item--active');
   })
 })
-
-// Popap - login
+// Modals
 let body = document.querySelector('body');
-let popupLogin = body.querySelector('.popup-login');
-let popupLinks = body.querySelector('.nav__init-link--login');
-let closePopup = body.querySelector('.popup-login__close-btn');
 
-popupLinks.onclick = function (e) {
-  e.preventDefault();
-  popupLogin.classList.add('popup-login--active');
-  document.body.style.overflow = 'hidden';
-};
+let loginPopup = document.querySelector('.popup-login');
+let loginPopupOpen = document.querySelector('.nav__init-link--login');
+let loginPopupClose = loginPopup.querySelector('.popup-login__close-btn');
 
-closePopup.onclick = function (e) {
-  e.preventDefault();
-  popupLogin.classList.remove('popup-login--active');
-  document.body.style.overflow = 'auto';
-};
-
-var onPopupEscPress = function (evt) {
-  if (evt.key === 'Escape') {
+const getOpenPopup = (openPopup, popup) => {
+  openPopup.onclick = (evt) => {
     evt.preventDefault();
-    popupLogin.classList.remove('popup-login--active');
+    popup.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+};
+
+const getClosePopup = (closePopup, popup) => {
+  closePopup.onclick = (evt) => {
+    evt.preventDefault();
+    popup.classList.remove('open');
     document.body.style.overflow = 'auto';
-  }
+  };
+
+  let onPopupEscPress = function (evt) {
+    if (evt.key === 'Escape') {
+      evt.preventDefault();
+      popup.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+  };
+  document.addEventListener('keydown', onPopupEscPress);
 };
-document.addEventListener('keydown', onPopupEscPress);
 
-// modal add
-let modalLogin = body.querySelector('.modal-add');
-let modalLink = body.querySelector('.js-product__modal');
-let modalClose = body.querySelector('.js-modal-close');
+getOpenPopup(loginPopupOpen, loginPopup);
+getClosePopup(loginPopupClose, loginPopup);
 
-modalLink.onclick = function (e) {
-  e.preventDefault();
-  modalLogin.classList.add('modal-add--active');
-  document.body.style.overflow = 'hidden';
+if (window.location == 'http://localhost:3000/catalog.html') {
+  let filterPopup = document.querySelector('.filter');
+  let filterPopupOpen = document.querySelector('.filter__open-btn');
+  let filterPopupClose = document.querySelector('.filter__close-btn');
+
+  getOpenPopup(filterPopupOpen, filterPopup);
+  getClosePopup(filterPopupClose, filterPopup);
 };
-modalClose.onclick = function (e) {
-  e.preventDefault();
-  modalLogin.classList.remove('modal-add--active');
-  document.body.style.overflow = 'auto';
+
+if (window.location == 'http://localhost:3000/product-card.html') {
+  let addPopup = document.querySelector('.modal-add');
+  let addPopupClose = document.querySelector('.modal-add__btn-close');
+  let addPopupOpen = document.querySelector('.product__btn-open');
+
+  getOpenPopup(addPopupOpen, addPopup);
+  getClosePopup(addPopupClose, addPopup);
 };
-// const getScrollbarWidth = function () {
-//   const item = document.createElement('div');
-
-//   item.style.position = 'absolute';
-//   item.style.top = '-9999px';
-//   item.style.width = '50px';
-//   item.style.height = '50px';
-//   item.style.overflow = 'scroll';
-//   item.style.visibility = 'hidden';
-
-//   document.body.appendChild(item);
-//   const scrollBarWidth = item.offsetWidth - item.clientWidth
-//   document.body.removeChild(item);
-//   return scrollBarWidth;
-// };

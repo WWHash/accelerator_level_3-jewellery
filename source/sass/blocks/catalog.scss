@@ -1,6 +1,5 @@
-.catalog__box {
+.catalog {
   margin-bottom: 35px;
-  border-bottom: 1px solid #F6F5F4;
 
   .container {
     display: flex;
@@ -11,11 +10,15 @@
 .filter {
   width: 21.4%;
   height: 100%;
+  z-index: 10;
 }
 // btn - open
 .catalog__btn-filter {
   display: none;
   margin-bottom: 50px;
+}
+.filter__close {
+  display: none;
 }
 // Accordion
 .filter__accordion {
@@ -171,6 +174,36 @@
     }
   }
 }
+// Filter page
+.filter--page {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #e5e5e5;
+}
+.filter--page .filter__dialog {
+  width: 400px;
+  margin: 0 auto;
+  background-color: $white;
+}
+.filter--page .filter__accordion {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+.filter--page .filter__btn-apply {
+  padding: 0 40px;
+}
+.filter--page .filter__btn-clear {
+  padding: 0 40px 40px 40px;
+}
+.filter--page .filter__slider-range::before {
+  left: 76px;
+}
+.filter--page .filter__slider-range::after {
+  left: 255px;
+}
+
 // Catalog
 .catalog__content {
   width: 74.3%;
@@ -202,22 +235,26 @@
   line-height: 130%; /* or 21px */
   text-align: center;
 
-  p {
+  h3 {
     margin: 0 0 5px 0;
     font-weight: 500;
     font-size: 16px;
   }
 
-  span {
+  p {
+    margin: 0;
     font-weight: bold;
     font-size: 14px;
   }
 }
 
 .catalog__controls {
-  margin-bottom: 77px;
+  padding-top: 36px;
+  padding-bottom: 39px;
+  border-top: 1px solid #f6f5f4;
 }
-.catalog__controls.container {
+.catalog__controls .container {
+  display: block;
   padding-left: 345px;
   padding-right: 45px;
 }
@@ -268,7 +305,7 @@
 
 // Tablet
 @media (max-width: $tablet-width) {
-  .catalog__box {
+  .catalog {
     .container {
       display: block;
     }
@@ -276,10 +313,131 @@
 
   .catalog__btn-filter {
     display: block;
+    a {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .filter {
-    display: none;
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 27px;
+    background-color: #e5e5e5;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .filter__dialog {
+    position: relative;
+    width: 400px;
+    background-color: $white;
+    transform: translateX(-100%);
+    transition: transform 1s ease-out;
+    box-shadow: 0px 5px 32px rgba(219, 213, 208, 0.24);
+  }
+  .filter.open {
+    visibility: visible;
+    opacity: 1;
+    transition: transform 5s ease-out;
+  }
+  .filter.open .filter__dialog {
+    transition: transform 1s ease-out;
+    transform: translateX(0);
+  }
+  .filter__close {
+    position: absolute;
+    top: -18px;
+    right: -12px;
+    display: block;
+    width: 35px;
+    // margin-left: auto;
+    button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: $main;
+      border:none;
+      cursor: pointer;
+
+      svg {
+        fill: $white;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $brown;
+        transition: background-color .5s ease;
+      }
+
+      &:active {
+        background-color: rgba($brown, 0.5);
+      }
+
+      &:hover svg,
+      &:focus svg {
+        fill: $main;
+      }
+      &:active svg {
+        fill: rgba($main, 0.3);
+      }
+    }
+  }
+  .filter__accordion {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .filter__btn-apply {
+    margin-bottom: 25px;
+    padding: 0 40px;
+  }
+  .filter__btn-clear {
+    padding: 0 40px 40px 40px;
+    margin-bottom: 25px;
+  }
+  .filter__slider-range::before {
+    left: 76px;
+  }
+  .filter__slider-range::after {
+    left: 253px;
+  }
+
+  .filter--page {
+    display: block;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .filter--page .filter__dialog {
+    width: 400px;
+    margin: 0 auto;
+    background-color: $white;
+    transition: transform 5s ease-out;
+    transform: translateX(0);
+  }
+  .filter--page .filter__accordion {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+  }
+  .filter--page .filter__btn-apply {
+    padding: 0 40px;
+  }
+  .filter--page .filter__btn-clear {
+    padding: 0 40px 40px 40px;
+  }
+  .filter-page .filter__slider-range::before {
+    left: 76px;
+  }
+  .filter--page .filter__slider-range::after {
+    left: 255px;
   }
 
   .catalog__content {
@@ -292,16 +450,47 @@
     }
   }
 
-  .catalog__controls.container {
+  .catalog__controls .container {
     padding-left: 40px;
     padding-right: 40px;
-    margin-bottom: 75px;
   }
 }
 
 // Mobile
 @media (max-width: $mobile-width) {
-  .catalog__box {
+  .filter {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .filter__dialog {
+    width: 270px;
+  }
+  .filter__slider-range::before {
+    left: 47px;
+  }
+  .filter__slider-range::after {
+    left: 157px;
+  }
+  .filter__btn-apply {
+    margin-bottom: 25px;
+    padding: 0 20px;
+  }
+  .filter__btn-clear {
+    padding: 0 20px 40px 20px;
+    margin-bottom: 25px;
+  }
+
+  .filter--page .filter__dialog {
+    width: 290px;
+  }
+  .filter--page .filter__slider-range::before {
+    left: 47px;
+  }
+  .filter-page .filter__slider-range::after {
+    left: 170px;
+  }
+  .catalog {
     margin-bottom: 28px;
   }
   .catalog__btn-filter {
@@ -321,10 +510,13 @@
     }
   }
 
-  .catalog__controls.container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 65px;
+  .catalog__controls {
+    padding-top: 28px;
+    padding-bottom: 37px;
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 
   .catalog__controls-btn {

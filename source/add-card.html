@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Jewerely</title>
+  <title>Product add card</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -27,11 +27,11 @@
 
           <div class="nav__search">
             <form action="https://echo.htmlacademy.ru/courses">
-              <button class="nav__search-btn" type="button">
+              <!-- <button class="nav__search-btn" type="button">
                 <svg width="14" height="14" viewBox="0 0 14 14">
                   <use xlink:href="img/sprite_auto.svg#icon-search"></use>
                 </svg>
-              </button>
+              </button> -->
 
               <input id="search-inp" type="search" name="search" placeholder="Type here to search">
             </form>
@@ -105,7 +105,7 @@
 
       <section class="add-card">
         <div class="add-card__content">
-          <h1>The item was added to your cart</h1>
+          <h2>The item was added to your cart</h2>
           <div class="add-card__card">
             <div class="add-card__card-img">
               <picture>
@@ -242,29 +242,29 @@
     </footer>
   </div>
 
-  <section id="popap-login" class="popap-login">
-    <div class=" popap-login__dialog">
+  <section id="popup-login" class="popup-login">
+    <div class=" popup-login__dialog">
 
-      <div class="popap-login__image">
+      <div class="popup-login__image">
         <picture>
           <img src="img/popap-desktop@1x.jpg" width="430" height="138" alt="popap-image">
         </picture>
       </div>
       <h2>Log In</h2>
 
-      <div class="popap-login__close">
-        <button class="popap-login__close-btn" type="button">
+      <div class="popup-login__close">
+        <button class="js-modal__close popap-login__close-btn" type="button">
           <span class="hidden">Закрыть</span>
         </button>
       </div>
 
-      <div class="popap-login__form">
+      <div class="popup-login__form">
         <form action="https://echo.htmlacademy.ru" method="GET">
           <div class="popap-login__form-fields">
             <label class="hidden" for="input-1">Введие почту</label>
             <input type="email" name="mail" id="input-1" placeholder="Your E-mail" required>
           </div>
-          <div class="popap-login__form-fields">
+          <div class="popup-login__form-fields">
             <label class="hidden" for="input-2">Введите пароль</label>
             <input type="password" name="password" id="input-2" placeholder="Password" required>
             <a href="#">Forgot your password?</a>
@@ -272,7 +272,7 @@
           <button type="button">Log In</button>
         </form>
       </div>
-      <div class="popap-login__signup">
+      <div class="popup-login__signup">
         <p>Don’t have an account?<a>Sign up</a></p>
       </div>
 

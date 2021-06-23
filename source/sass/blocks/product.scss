@@ -135,8 +135,32 @@
 }
 
 .product__advantages {
-  display: flex;
-  justify-content: space-between;
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &-item {
+    position: relative;
+    flex-grow: 1;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 20px;
+        background-color: #f6f5f4;
+        content: '';
+      }
+  }
+  &-item:last-child {
+    &::after {
+      display: none;
+    }
+  }
 
   p {
     margin: 0;
@@ -145,7 +169,7 @@
     font-size: 14px;
     line-height: 130%;
     color: $grey;
-    border-right: 1px solid #f6f5f4;
+    text-align: center;
   }
 }
 
@@ -241,7 +265,7 @@
   .product__advantages {
     p {
       font-size: 12px;
-      width: 28%;
+      width: 80%;
       text-align: center;
     }
   }

@@ -11,14 +11,14 @@
   visibility: hidden;
   opacity: 0;
   transition: .8s;
-  background-color: rgba($black, 0.25);
-  z-index: 5;
+  background-color: $white;
+  z-index: 15;
 }
-.popup-login--active {
+.popup-login.open {
   opacity: 1;
   visibility: visible;
 }
-.popup-login--active .popup-login__dialog {
+.popup-login.open .popup-login__dialog {
   transform: translateY(0);
   opacity: 1;
   }
@@ -216,15 +216,15 @@
   }
 }
 
-.modal-add--active {
+.modal-add.open {
   visibility: visible;
   opacity: 1;
 }
-.modal-add--active .modal-add__dialog {
+.modal-add.open .modal-add__dialog {
   transform: translateY(0);
 }
 
-.modal-add__btn-close {
+.modal-add__close {
   position: absolute;
   top: 20px;
   right: 20px;

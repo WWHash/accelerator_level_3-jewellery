@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Jewerely</title>
+  <title>Product card</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -27,11 +27,11 @@
 
           <div class="nav__search">
             <form action="https://echo.htmlacademy.ru/courses">
-              <button class="nav__search-btn" type="button">
+              <!-- <button class="nav__search-btn" type="button">
                 <svg width="14" height="14" viewBox="0 0 14 14">
                   <use xlink:href="img/sprite_auto.svg#icon-search"></use>
                 </svg>
-              </button>
+              </button> -->
 
               <input id="search-inp" type="search" name="search" placeholder="Type here to search">
             </form>
@@ -48,7 +48,7 @@
           <div class="nav__init">
             <div class="nav__init-list">
               <div class="nav__init-item nav__init-item--login">
-                <a class="nav__init-link nav__init-link--login" href="#popap-login">Login</a>
+                <a class="js-modal__open nav__init-link nav__init-link--login" href="#popap-login">Login</a>
               </div>
               <div class="nav__init-item nav__init-item--bas">
                 <a class="nav__init-link nav__init-link--bas" href="#">
@@ -158,14 +158,23 @@
           </div>
 
           <div class="product__btn">
-            <a class="js-product__modal" href="add-card.html">Add to cart</a>
+            <a class="product__btn-open" href="add-card.html">Add to cart</a>
           </div>
 
           <div class="product__advantages">
-            <p>14 Day Returns</p>
-            <p>2-Year Warranty</p>
-            <p>Free Shipping</p>
+            <ul class="product__advantages-list">
+              <li class="product__advantages-item">
+                <p>14 Day Returns</p>
+              </li>
+              <li class="product__advantages-item">
+                <p>2-Year Warranty</p>
+              </li>
+              <li class="product__advantages-item">
+                <p>Free Shipping</p>
+              </li>
+            </ul>
           </div>
+
         </div>
       </section>
 
@@ -514,7 +523,7 @@
       <h2>Log In</h2>
 
       <div class="popup-login__close">
-        <button class="popup-login__close-btn close-popup" type="button">
+        <button class="js-modal__close popup-login__close-btn" type="button">
           <span class="hidden">Закрыть</span>
         </button>
       </div>
@@ -544,8 +553,8 @@
     <div class="modal-add__dialog">
       <h2>The item was added to your cart</h2>
 
-      <div class="modal-add__btn-close">
-        <button class="js-modal-close"><span class="hidden">Close</span></button>
+      <div class="modal-add__close">
+        <button class="modal-add__btn-close"><span class="hidden">Close</span></button>
       </div>
 
       <div class="modal-add__card">

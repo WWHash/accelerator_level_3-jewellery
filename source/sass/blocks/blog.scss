@@ -44,7 +44,7 @@
 
   &:hover,
   &:focus {
-    color: $footer-hover;
+    color: $brown;
 
     &::after {
       display: none;
@@ -93,6 +93,7 @@
 
   p {
     margin: 0;
+    padding: 0 42px;
     margin-bottom: 40px;
     font-family: $cormorant;
     font-weight: 600;
@@ -126,7 +127,7 @@
 
     &:hover,
     &:focus {
-      color: $footer-hover;
+      color: $brown;
 
       &::before {
         background-color: $footer-hover;
@@ -182,7 +183,6 @@
     min-height: 300px;
     order: 1;
   }
-
   .blog__item--main {
     margin-right: 0;
     height: 100%;
@@ -203,7 +203,6 @@
   }
 }
 
-//*
 //mobile
 @media (max-width: $mobile-width) {
   .blog__link-all {
@@ -227,7 +226,6 @@
       height: 256px;
     }
   }
-
   .blog__item:last-child {
     flex-direction: column;
   }
