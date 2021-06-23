@@ -39,11 +39,17 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 130%;/* or 23px */
+    color: $main;
   }
 
-  &:hover svg,
-  &:focus svg {
-    stroke: $brown;
+  &:hover,
+  &:focus {
+    h3 {
+      color: $brown;
+    }
+    svg {
+      stroke: $main;
+    }
   }
 }
 // Кнопка аккордиона
@@ -68,6 +74,7 @@
   border-top: none;
   display: none;
 }
+
 // Active accordion
 .questions__accordion-item--active .questions__accordion-btn {
   svg {

@@ -45,7 +45,7 @@
 
     &:hover,
     &:hover {
-      color: $footer-hover;
+      color: $brown;
     }
   }
 }
@@ -61,7 +61,7 @@
   }
 
   &:hover svg {
-    fill: $footer-hover;
+    fill: $brown;
   }
 }
 
@@ -189,7 +189,7 @@
 
     &:hover svg,
     &:focus svg {
-      stroke: $footer-hover;
+      stroke: $brown;
     }
   }
 
@@ -202,15 +202,6 @@
   .nav__logo {
     margin-right: 0;
     margin-top: 4px;
-
-    svg {
-      fill: $brown;
-    }
-
-    &:hover svg,
-    &:focus svg {
-      fill: $footer-hover;
-    }
   }
   //init block
   .nav__init {
@@ -234,7 +225,7 @@
 
     &:hover svg,
     &:focus svg {
-      stroke: $footer-hover;
+      stroke: $brown;
     }
   }
   //open-menu
@@ -249,7 +240,7 @@
     }
 
     &:hover svg {
-      stroke: $footer-hover;
+      stroke: $brown;
     }
   }
 
@@ -287,7 +278,7 @@
     color: $white;
 
     &:hover {
-      color: $footer-hover;
+      color: $brown;
     }
   }
 
@@ -337,7 +328,7 @@
 
       &:hover,
       &:focus {
-        color: $footer-hover;
+        color: $brown;
       }
     }
   }

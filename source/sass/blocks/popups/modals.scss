@@ -83,7 +83,7 @@
     &:hover::after,
     &:focus::before,
     &:focus::after {
-      background-color: $footer-hover;
+      background-color: $brown;
     }
   }
 }
@@ -107,26 +107,11 @@
 
     &:hover,
     &:focus {
-      border-bottom-color: $footer-hover;
+      border-bottom-color: $brown;
 
       &::placeholder {
-        color: $footer-hover;
+        color: $brown;
       }
-    }
-  }
-
-  button {
-    display: block;
-    padding: 20px 0;
-    background: $brown;
-    color: $white;
-    border: 1px solid $brown;
-    box-sizing: border-box;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-      background: rgba($brown, 0.7);
     }
   }
 }
@@ -145,7 +130,7 @@
 
     &:hover,
     &:focus {
-      color: $footer-hover;
+      color: $brown;
     }
   }
 }
@@ -171,7 +156,7 @@
 
     &:hover,
     &:focus {
-      color: $footer-hover;
+      color: $brown;
     }
   }
 }
