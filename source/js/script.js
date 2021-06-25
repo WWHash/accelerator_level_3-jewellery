@@ -1,19 +1,22 @@
 'use strict';
 // Mobile menu
-let nav = document.querySelector('.nav');
-let navToggle = document.querySelector('.nav__burger');
 
-nav.classList.remove('nav--nojs');
+if ('.nav' && '.nav__burger') {
+  let nav = document.querySelector('.nav');
+  let navToggle = document.querySelector('.nav__burger');
 
-navToggle.addEventListener('click', function () {
-  if (nav.classList.contains('nav--closed')) {
-    nav.classList.remove('nav--closed');
-    nav.classList.add('nav--opened');
-  } else {
-    nav.classList.add('nav--closed');
-    nav.classList.remove('nav--opened');
-  }
-});
+  nav.classList.remove('nav--nojs');
+
+  navToggle.addEventListener('click', function () {
+    if (nav.classList.contains('nav--closed')) {
+      nav.classList.remove('nav--closed');
+      nav.classList.add('nav--opened');
+    } else {
+      nav.classList.add('nav--closed');
+      nav.classList.remove('nav--opened');
+    }
+  });
+}
 
 // Jump element
 const TABLET_MEDIA_QUERY = 1023;
@@ -80,38 +83,37 @@ new Swiper('.new-in__slider', {
 });
 
 // Accordion index.html
-let items = document.querySelectorAll('.questions__accordion-trigger');
-let item = document.querySelectorAll('.questions__accordion-item');
-items.forEach(function (item) {
-  item.addEventListener('click', function () {
-    let parent = item.parentNode;
-    if (parent.classList.contains('questions__accordion-item--active')) {
-      parent.classList.remove('questions__accordion-item--active');
-    }
-    else {
-      document.querySelectorAll('.questions__accordion-item')
-        .forEach((child) => child.classList.remove('questions__accordion-item--active'))
-      parent.classList.add('questions__accordion-item--active');
-    }
+if ('.questions__accordion-trigger' && '.questions__accordion-item') {
+  let items = document.querySelectorAll('.questions__accordion-trigger');
+  let item = document.querySelectorAll('.questions__accordion-item');
+  items.forEach(function (item) {
+    item.addEventListener('click', function () {
+      let parent = item.parentNode;
+      if (parent.classList.contains('questions__accordion-item--active')) {
+        parent.classList.remove('questions__accordion-item--active');
+      }
+      else {
+        document.querySelectorAll('.questions__accordion-item')
+          .forEach((child) => child.classList.remove('questions__accordion-item--active'))
+        parent.classList.add('questions__accordion-item--active');
+      }
+    })
   })
-})
+}
 
 // Accordion catalog.html
-let filterTrigger = document.querySelectorAll('.filter__accordion-trigger');
-// var filterItem = document.querySelectorAll('.filter__accordion-item');
+if ('.filter__accordion-trigger') {
+  let filterTrigger = document.querySelectorAll('.filter__accordion-trigger');
 
-filterTrigger.forEach(function (item) {
-  item.addEventListener('click', function () {
-    let parent = item.parentNode;
-    parent.classList.toggle('filter__accordion-item--active');
+  filterTrigger.forEach(function (item) {
+    item.addEventListener('click', function () {
+      let parent = item.parentNode;
+      parent.classList.toggle('filter__accordion-item--active');
+    })
   })
-})
+}
 // Modals
 let body = document.querySelector('body');
-
-let loginPopup = document.querySelector('.popup-login');
-let loginPopupOpen = document.querySelector('.nav__init-link--login');
-let loginPopupClose = loginPopup.querySelector('.popup-login__close-btn');
 
 const getOpenPopup = (openPopup, popup) => {
   openPopup.onclick = (evt) => {
@@ -138,8 +140,13 @@ const getClosePopup = (closePopup, popup) => {
   document.addEventListener('keydown', onPopupEscPress);
 };
 
-getOpenPopup(loginPopupOpen, loginPopup);
-getClosePopup(loginPopupClose, loginPopup);
+if ('.nav__init-link--login') {
+  let loginPopup = document.querySelector('.popup-login');
+  let loginPopupOpen = document.querySelector('.nav__init-link--login');
+  let loginPopupClose = loginPopup.querySelector('.popup-login__close-btn');
+  getOpenPopup(loginPopupOpen, loginPopup);
+  getClosePopup(loginPopupClose, loginPopup);
+}
 
 if (window.location == 'http://localhost:3000/catalog.html') {
   let filterPopup = document.querySelector('.filter');
