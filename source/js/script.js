@@ -143,7 +143,7 @@ getClosePopup(loginPopupClose, loginPopup);
 
 if (window.location == 'http://localhost:3000/catalog.html') {
   let filterPopup = document.querySelector('.filter');
-  let filterPopupOpen = document.querySelector('.filter__open-btn');
+  let filterPopupOpen = document.querySelector('.catalog__filter-open-btn');
   let filterPopupClose = document.querySelector('.filter__close-btn');
 
   getOpenPopup(filterPopupOpen, filterPopup);

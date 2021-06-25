@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Jewerely catalog</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -27,12 +27,6 @@
 
           <div class="nav__search">
             <form action="https://echo.htmlacademy.ru/courses">
-              <!-- <button class="nav__search-btn" type="button">
-                <svg width="14" height="14" viewBox="0 0 14 14">
-                  <use xlink:href="img/sprite_auto.svg#icon-search"></use>
-                </svg>
-              </button> -->
-
               <input id="search-inp" type="search" name="search" placeholder="Type here to search">
             </form>
           </div>
@@ -48,7 +42,7 @@
           <div class="nav__init">
             <div class="nav__init-list">
               <div class="nav__init-item nav__init-item--login">
-                <a class="js-modal__open nav__init-link nav__init-link--login" href="login.html">Login</a>
+                <a class="nav__init-link nav__init-link--login" href="login.html">Login</a>
               </div>
               <div class="nav__init-item nav__init-item--bas">
                 <a class="nav__init-link nav__init-link--bas" href="#">
@@ -114,8 +108,8 @@
 
       <section class="catalog">
         <div class="container">
-          <div class="catalog__btn-filter">
-            <a class="filter__open-btn btn-popup" href="filter.html">Filter</a>
+          <div class="catalog__filter-open">
+            <a class="catalog__filter-open-btn btn-popup" href="filter.html">Filter</a>
           </div>
           <!-- filter -->
           <div class="filter" id="filter">
@@ -165,7 +159,7 @@
                     <div class="filter__accordion-item">
                       <div class="filter__accordion-trigger">
                         <h3>Material</h3>
-                        <button class="filter__accordion-btn accordion__btn" type="button">
+                        <button class="filter__accordion-btn" type="button">
                           <svg width="17" height="10" viewBox="0 0 17 10">
                             <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
                           </svg>
@@ -188,7 +182,7 @@
                     <div class="filter__accordion-item">
                       <div class="filter__accordion-trigger">
                         <h3>Collection</h3>
-                        <button class="filter__accordion-btn accordion__btn" type="button">
+                        <button class="filter__accordion-btn" type="button">
                           <svg width="17" height="10" viewBox="0 0 17 10">
                             <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
                           </svg>
@@ -211,7 +205,7 @@
                     <div class="filter__accordion-item filter__accordion-item--active">
                       <div class="filter__accordion-trigger">
                         <h3>Price</h3>
-                        <button class="filter__accordion-btn accordion__btn" type="button">
+                        <button class="filter__accordion-btn" type="button">
                           <svg width="17" height="10" viewBox="0 0 17 10">
                             <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
                           </svg>
@@ -572,9 +566,9 @@
         <div class="catalog__controls">
           <div class="container">
 
-            <div class="catalog__controls-btn">
-              <button class="catalog__controls-btn--prev" type="button">Previous</button>
-              <button class="catalog__controls-btn--next" type="button">Next</button>
+            <div class="catalog__controls-btns">
+              <button class="catalog__controls-btn catalog__controls-btn--prev" type="button">Previous</button>
+              <button class="catalog__controls-btn catalog__controls-btn--next" type="button">Next</button>
             </div>
             <!-- controls pagination -->
             <div class="catalog__pagination">

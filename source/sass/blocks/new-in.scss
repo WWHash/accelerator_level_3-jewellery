@@ -58,7 +58,7 @@
 
 .new-in__slider {
   width: 100%;
-  height: 422px;
+  height: 403px;
 }
 
 .new-in__card {
@@ -135,16 +135,29 @@
 // Пагинация
 .new-in__slider-pagination {
   width: 100%;
-  right: 0;
-  bottom: -1px;
-  left: 0;
+  text-align: center;
 }
 
 .new-in__slider-pagination .swiper-pagination-bullet {
   display: inline-block;
-  margin-right: 6px;
+  padding-right: 7px;
+  padding-left: 5px;
   font-size: 16px;
   background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  color: $grey;
+
+  &:hover,
+  &:focus {
+    color: $main;
+  }
+  &:active {
+    color: rgba($main, 0.5);
+  }
+}
+.new-in__slider-pagination .swiper-pagination-bullet-active {
+  color: $main;
 }
 
 // Tablet
@@ -174,7 +187,7 @@
 
   .new-in__slider {
     width: 678px;
-    height: 469px;
+    height: 449px;
   }
 
   .new-in__card {
@@ -212,7 +225,7 @@
 
   .new-in__slider {
     width: 290px;
-    height: 270px;
+    height: 251px;
   }
 
   .new-in__card-image {
@@ -227,4 +240,9 @@
   .new-in__card {
     width: 130px;
   }
+
+  // .swiper-pagination-current {
+  //   padding-right: 5px;
+  //   padding-left: 5px;
+  // }
 }

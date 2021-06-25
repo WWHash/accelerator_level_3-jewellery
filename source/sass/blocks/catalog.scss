@@ -13,7 +13,7 @@
   z-index: 10;
 }
 // btn - open
-.catalog__btn-filter {
+.catalog__filter-open {
   display: none;
   margin-bottom: 50px;
 }
@@ -258,7 +258,7 @@
   padding-left: 345px;
   padding-right: 45px;
 }
-.catalog__controls-btn {
+.catalog__controls-btns {
   display: flex;
   justify-content: space-between;
   button {
@@ -311,7 +311,7 @@
     }
   }
 
-  .catalog__btn-filter {
+  .catalog__filter-open {
     display: block;
     a {
       display:flex;
@@ -493,7 +493,7 @@
   .catalog {
     margin-bottom: 28px;
   }
-  .catalog__btn-filter {
+  .catalog__filter-open {
     margin-bottom: 40px;
   }
 
@@ -519,7 +519,7 @@
     }
   }
 
-  .catalog__controls-btn {
+  .catalog__controls-btns {
     display: none;
   }
 }
