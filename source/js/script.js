@@ -1,13 +1,11 @@
 'use strict';
-// localStorage
-localStorage.setItem('data', 5);
-console.log(localStorage.getItem('data'));
 
 // Mobile menu
-if ('.nav' && '.nav__burger') {
-  let nav = document.querySelector('.nav');
-  let navToggle = document.querySelector('.nav__burger');
 
+let nav = document.querySelector('.nav');
+let navToggle = document.querySelector('.nav__burger');
+
+if (nav && navToggle) {
   nav.classList.remove('nav--nojs');
 
   navToggle.addEventListener('click', function () {
@@ -86,12 +84,12 @@ new Swiper('.new-in__slider', {
 });
 
 // Accordion index.html
-if ('.questions__accordion-trigger' && '.questions__accordion-item') {
-  let items = document.querySelectorAll('.questions__accordion-trigger');
-  let item = document.querySelectorAll('.questions__accordion-item');
-  items.forEach(function (item) {
-    item.addEventListener('click', function () {
-      let parent = item.parentNode;
+let accordionTrigger = document.querySelectorAll('.questions__accordion-trigger');
+let accordionItem = document.querySelectorAll('.questions__accordion-item');
+if (accordionTrigger && accordionItem) {
+  accordionTrigger.forEach(function (accordionItem) {
+    accordionItem.addEventListener('click', function () {
+      let parent = accordionItem.parentNode;
       if (parent.classList.contains('questions__accordion-item--active')) {
         parent.classList.remove('questions__accordion-item--active');
       }
@@ -104,10 +102,9 @@ if ('.questions__accordion-trigger' && '.questions__accordion-item') {
   })
 }
 
-// Accordion catalog.html
-if ('.filter__accordion-trigger') {
-  let filterTrigger = document.querySelectorAll('.filter__accordion-trigger');
-
+// Accordion filter catalog.html
+let filterTrigger = document.querySelectorAll('.filter__accordion-trigger');
+if (filterTrigger) {
   filterTrigger.forEach(function (item) {
     item.addEventListener('click', function () {
       let parent = item.parentNode;
@@ -143,28 +140,26 @@ const getClosePopup = (closePopup, popup) => {
   document.addEventListener('keydown', onPopupEscPress);
 };
 
-if ('.nav__init-link--login') {
-  let loginPopup = document.querySelector('.popup-login');
-  let loginPopupOpen = document.querySelector('.nav__init-link--login');
-  let loginPopupClose = loginPopup.querySelector('.popup-login__close-btn');
+let loginPopup = document.querySelector('.popup-login');
+let loginPopupOpen = document.querySelector('.nav__init-link--login');
+let loginPopupClose = loginPopup.querySelector('.popup-login__close-btn');
+if (loginPopupOpen && loginPopup) {
   getOpenPopup(loginPopupOpen, loginPopup);
   getClosePopup(loginPopupClose, loginPopup);
 }
 
-if (window.location == 'http://localhost:3000/catalog.html') {
-  let filterPopup = document.querySelector('.filter');
-  let filterPopupOpen = document.querySelector('.catalog__filter-open-btn');
-  let filterPopupClose = document.querySelector('.filter__close-btn');
-
+let filterPopup = document.querySelector('.filter');
+let filterPopupOpen = document.querySelector('.catalog__filter-open-btn');
+let filterPopupClose = document.querySelector('.filter__close-btn');
+if (filterPopup && filterPopupOpen) { //window.location == 'http://localhost:3000/catalog.html'
   getOpenPopup(filterPopupOpen, filterPopup);
   getClosePopup(filterPopupClose, filterPopup);
 };
 
-if (window.location == 'http://localhost:3000/product-card.html') {
-  let addPopup = document.querySelector('.modal-add');
-  let addPopupClose = document.querySelector('.modal-add__btn-close');
-  let addPopupOpen = document.querySelector('.product__btn-open');
-
+let addPopup = document.querySelector('.modal-add');
+let addPopupClose = document.querySelector('.modal-add__btn-close');
+let addPopupOpen = document.querySelector('.product__btn-open');
+if (addPopup && addPopupOpen) { //window.location == 'http://localhost:3000/product-card.html'
   getOpenPopup(addPopupOpen, addPopup);
   getClosePopup(addPopupClose, addPopup);
 };
