@@ -1,6 +1,9 @@
 'use strict';
-// Mobile menu
+// localStorage
+localStorage.setItem('data', 5);
+console.log(localStorage.getItem('data'));
 
+// Mobile menu
 if ('.nav' && '.nav__burger') {
   let nav = document.querySelector('.nav');
   let navToggle = document.querySelector('.nav__burger');
