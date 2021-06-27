@@ -19,10 +19,6 @@
   flex: 0 0 200px;
   margin-bottom: 10px;
 
-  form {
-    display: flex;
-  }
-
   input {
     padding-left: 34px;
     background-image: url("../../img/icon-search.svg");
@@ -30,38 +26,26 @@
     background-position: 4% 48%;
     border: none;
     cursor: pointer;
-
-    &:hover::placeholder,
-    &:hover::placeholder {
-      color: $brown;
-    }
+    outline: none;
   }
 
-  input::placeholder {
+  input:focus ~ label {
+    display: none;
+  }
+
+  label {
+    display: block;
+    margin-top: -18px;
+    padding-left: 34px;
     font-family: $poppins;
-    font-weight: 500;
     font-size: 14px;
     line-height: 21px;
+    color: $grey;
+    cursor: pointer;
 
-    &:hover,
     &:hover {
       color: $brown;
     }
-  }
-}
-
-.nav__search-btn {
-  margin-right: -26px;
-  background-color: transparent;
-  border: none;
-  z-index: 10;
-
-  svg {
-    fill: $black;
-  }
-
-  &:hover svg {
-    fill: $brown;
   }
 }
 
@@ -239,8 +223,9 @@
       stroke: $white;
     }
 
-    &:hover svg {
-      stroke: $brown;
+    &:hover svg,
+    &:focus svg {
+      stroke: $main;
     }
   }
 
@@ -289,19 +274,41 @@
     color: rgba($white, 0.75);
   }
   //opened-search
+  // .nav--opened .nav__search {
+  //   display: block;
+  //   margin-left: 45px;
+  //   margin-right: 45px;
+  //   margin-bottom: 55px;
+  //   label {
+  //     display: none;
+  //   }
+  // }
+
   .nav--opened .nav__search {
     display: block;
     margin-left: 45px;
     margin-right: 45px;
     margin-bottom: 55px;
-  }
-
-  .nav--opened .nav__search {
-    form input {
+    input {
       width: 100%;
       height: 40px;
+      padding-left: 60px;
       border-radius: 21px;
       background-color: rgba($white, 0.15);
+      color: $white;
+      outline: none;
+
+      &:hover {
+        background-color: rgba($white, 0.3);
+      }
+
+      &:focus {
+        color: $black;
+        background-color: $white;
+      }
+    }
+    label {
+      display: none;
     }
   }
   //opened-logo
@@ -309,11 +316,20 @@
     svg {
       fill: $white;
     }
+    &:hover svg,
+    &:focus svg {
+      fill: $main;
+    }
   }
   //opened-login
   .nav--opened .nav__init-item--bas {
     svg {
       stroke: $white;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      stroke: $main;
     }
   }
   .nav--opened .nav__init-item--login {
