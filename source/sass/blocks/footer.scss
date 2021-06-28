@@ -31,7 +31,7 @@
 
   p {
     margin: 0;
-    margin-bottom: 17px;
+    margin-bottom: 18px;
     font-family: $poppins;
     font-size: 16px;
     line-height: 130%; /* or 21px */
@@ -42,8 +42,11 @@
     display: flex;
   }
 
-  input {
+  .footer__form-input-box {
     width: 77%;
+  }
+
+  input {
     padding: 30px 50px 10px 0;
     background-color: transparent;
     color: $white;
@@ -52,22 +55,27 @@
     border-bottom: 1px solid $white;
     cursor: pointer;
     box-sizing: border-box;
-
-
-    &::placeholder {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 21px;
-    }
-
     &:hover,
     &:focus {
       border-color: $brown;
-
-      &::placeholder {
-        color: $brown;
-      }
     }
+  }
+  input:hover ~ label {
+    color: $brown;
+  }
+  input:focus ~ label {
+    display: none;
+  }
+
+  label {
+    display: block;
+    margin-top: -31px;
+    font-family: $poppins;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $grey;
+    cursor: pointer;
   }
 }
 
@@ -189,7 +197,7 @@
   .footer__form {
     width: 82.7%;
 
-    input {
+    .footer__form-input-box {
       width: 79%;
     }
 
@@ -239,9 +247,10 @@
 
     p {
       padding-right: 45px;
+      margin-bottom: 16px;
     }
 
-    input {
+    .footer__form-input-box {
       width: 60%;
     }
 

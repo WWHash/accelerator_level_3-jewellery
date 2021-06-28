@@ -137,8 +137,10 @@
             <h2>The good stuff in your inbox</h2>
             <p>News and updates from CH. No spam, we promise.</p>
             <form action="https://echo.htmlacademy.ru/courses">
-              <input type="email" name="subscription" placeholder="Your E-mail"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <div class="footer__form-input-box">
+                <input id="inp-foo" type="email" name="subscription" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <label for="inp-foo">Your E-mail</label>
+              </div>
               <button class="footer__form-btn" type="submit">
                 <span>Sign Up</span>
                 <svg width="30" height="11" viewBox="0 0 30 11">
@@ -148,8 +150,7 @@
             </form>
           </div>
 
-          <section class="footer__menu">
-            <h2 class="hidden">Меню в футуре</h2>
+          <div class="footer__menu">
             <ul class="footer__menu-list">
               <li class="footer__menu__item">
                 <a class="footer__menu__link" href="#">Ordering & Payment</a>
@@ -178,7 +179,7 @@
                 <a class="footer__menu__link" href="#">Contact Us</a>
               </li>
             </ul>
-          </section>
+          </div>
 
           <ul class="social">
             <li class="social__item">

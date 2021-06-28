@@ -35,8 +35,7 @@
   z-index: 10;
   h2 {
     margin: 0;
-    margin-top: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     font-family: $cormorant;
     font-weight: bold;
     font-size: 34px;
@@ -87,6 +86,10 @@
     }
   }
 }
+
+.popup-login__image {
+  margin-bottom: 50px;
+}
 // Form
 .popup-login__form {
   padding: 0 45px;
@@ -97,31 +100,50 @@
   }
 
   input {
-    padding: 15px 0;
+    padding: 15px 0 10px 0;
     background-color: transparent;
     outline: none;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom-color: $main;
-
     &:hover,
     &:focus {
       border-bottom-color: $brown;
-
-      &::placeholder {
-        color: $brown;
-      }
     }
+  }
+
+  input:focus ~ label {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  button {
+    margin-top: 10px;
+    margin-bottom: 15px;
   }
 }
 
 .popup-login__form-field {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
+
+  label {
+    display: block;
+    margin-top: -33px;
+    font-family: $poppins;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $grey;
+    &:hover,
+    &:focus {
+      color: $brown;
+    }
+  }
 
   a {
     display: block;
-    margin-top: 10px;
+    margin-top: 15px;
     font-family: $poppins;
     font-weight: 500;
     font-size: 12px;
