@@ -55,27 +55,23 @@
     border-bottom: 1px solid $white;
     cursor: pointer;
     box-sizing: border-box;
+    ::placeholder {
+      font-family: $poppins;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: $grey;
+    }
     &:hover,
     &:focus {
       border-color: $brown;
     }
   }
-  input:hover ~ label {
+  input:hover::placeholder {
     color: $brown;
   }
-  input:focus ~ label {
-    display: none;
-  }
-
-  label {
-    display: block;
-    margin-top: -31px;
-    font-family: $poppins;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    color: $grey;
-    cursor: pointer;
+  input:focus::placeholder {
+    color: transparent;
   }
 }
 

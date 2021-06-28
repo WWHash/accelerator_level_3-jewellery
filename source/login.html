@@ -30,8 +30,8 @@
 
           <div class="nav__search">
             <form action="https://echo.htmlacademy.ru/courses">
-              <input id="search-inp" type="search" name="search">
-              <label for="search-inp">Type here to search</label>
+              <input id="search-inp" type="search" name="search" placeholder="Type here to search">
+              <label class="hidden" for="search-inp">Type here to search</label>
             </form>
           </div>
 
@@ -138,8 +138,9 @@
             <p>News and updates from CH. No spam, we promise.</p>
             <form action="https://echo.htmlacademy.ru/courses">
               <div class="footer__form-input-box">
-                <input id="inp-foo" type="email" name="subscription" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                <label for="inp-foo">Your E-mail</label>
+                <input id="inp-foo" type="email" name="subscription" placeholder="Your E-mail"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <label class="hidden" for="inp-foo">Your E-mail</label>
               </div>
               <button class="footer__form-btn" type="submit">
                 <span>Sign Up</span>

@@ -107,15 +107,23 @@
     border-left: none;
     border-right: none;
     border-bottom-color: $main;
+    ::placeholder {
+      font-family: $poppins;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: $grey;
+    }
     &:hover,
     &:focus {
       border-bottom-color: $brown;
     }
   }
-
-  input:focus ~ label {
-    visibility: hidden;
-    opacity: 0;
+  input:hover::placeholder {
+    color: $brown;
+  }
+  input:focus::placeholder {
+    color: transparent;
   }
 
   button {
@@ -126,20 +134,6 @@
 
 .popup-login__form-field {
   margin-bottom: 35px;
-
-  label {
-    display: block;
-    margin-top: -33px;
-    font-family: $poppins;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    color: $grey;
-    &:hover,
-    &:focus {
-      color: $brown;
-    }
-  }
 
   a {
     display: block;

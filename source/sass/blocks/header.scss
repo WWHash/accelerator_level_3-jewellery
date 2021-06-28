@@ -21,30 +21,24 @@
 
   input {
     padding-left: 34px;
-    background-image: url("../../img/icon-search.svg");
+    background-image: url("../img/icon-search.svg");
     background-repeat: no-repeat;
     background-position: 4% 48%;
     border: none;
     cursor: pointer;
     outline: none;
-  }
-
-  input:focus ~ label {
-    display: none;
-  }
-
-  label {
-    display: block;
-    margin-top: -18px;
-    padding-left: 34px;
-    font-family: $poppins;
-    font-size: 14px;
-    line-height: 21px;
-    color: $grey;
-    cursor: pointer;
-
-    &:hover {
-      color: $brown;
+    ::placeholder {
+      font-family: $poppins;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: $grey;
+    }
+    &:hover::placeholder {
+      color: $main;
+    }
+    &:focus::placeholder {
+      visibility: hidden;
     }
   }
 }
@@ -273,16 +267,6 @@
     line-height: 23px;
     color: rgba($white, 0.75);
   }
-  //opened-search
-  // .nav--opened .nav__search {
-  //   display: block;
-  //   margin-left: 45px;
-  //   margin-right: 45px;
-  //   margin-bottom: 55px;
-  //   label {
-  //     display: none;
-  //   }
-  // }
 
   .nav--opened .nav__search {
     display: block;
@@ -296,20 +280,11 @@
       border-radius: 21px;
       background-color: rgba($white, 0.15);
       color: $white;
-      outline: none;
-
-      &:hover {
-        background-color: rgba($white, 0.3);
-      }
-
-      &:focus {
-        color: $black;
-        background-color: $white;
+      ::placeholder {
+        display: none;
       }
     }
-    label {
-      display: none;
-    }
+
   }
   //opened-logo
   .nav--opened .nav__logo {
@@ -345,6 +320,104 @@
       &:hover,
       &:focus {
         color: $brown;
+      }
+    }
+  }
+
+
+
+  .nav--nojs {
+    background-color: #a87b62;
+    padding-bottom: 80px;
+  }
+  .nav--nojs .nav__init {
+    flex-basis: 30%;
+  }
+  .nav--nojs .nav__burger {
+    display: none;
+  }
+  .nav--nojs .nav__logo {
+    svg {
+      fill: $white;
+    }
+    &:hover svg,
+    &:focus svg {
+      fill: $main;
+    }
+  }
+  .nav--nojs .nav__menu {
+    display: block;
+    border: none;
+  }
+  .nav--nojs .nav__menu-list {
+    width: 100%;
+    display: block;
+    padding-top: 0;
+    margin-bottom: 55px;
+  }
+  .nav--nojs .nav__menu-list--hiden {
+    display: block;
+  }
+  .nav--nojs .nav__menu-item {
+    text-align: left;
+    margin-left: 45px;
+    margin-right: 45px;
+    margin-bottom: 40px;
+  }
+  .nav--nojs .nav__menu-item--hidden {
+    margin-bottom: 30px;
+  }
+  .nav--nojs .nav__menu-link {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: $white;
+
+    &:hover {
+      color: $main;
+    }
+  }
+  .nav--nojs .nav__search {
+    display: block;
+    flex-basis: 30%;
+    input {
+      height: 40px;
+      padding-left: 30px;
+      border-radius: 21px;
+      background-color: rgba($white, 0.15);
+      color: $white;
+    }
+
+  }
+  .nav--nojs .nav__init-item--bas {
+    margin-left: 0;
+    span {
+      display: block;
+    }
+    svg {
+      display: none;
+    }
+    a {
+      font-size: 18px;
+      line-height: 23px;
+      color: $white;
+
+      &:hover,
+      &:focus {
+        color: $main;
+      }
+    }
+
+  }
+  .nav--nojs .nav__init-item--login {
+    a {
+      font-size: 18px;
+      line-height: 23px;
+      color: $white;
+
+      &:hover,
+      &:focus {
+        color: $main;
       }
     }
   }
