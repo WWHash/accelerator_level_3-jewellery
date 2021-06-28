@@ -602,8 +602,9 @@
             <h2>The good stuff in your inbox</h2>
             <p>News and updates from CH. No spam, we promise.</p>
             <form action="https://echo.htmlacademy.ru/courses">
-              <input type="email" name="subscription" placeholder="Your E-mail">
-              <button class="footer__form-btn" type="button">
+              <input type="email" name="subscription" placeholder="Your E-mail"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <button class="footer__form-btn" type="submit">
                 <span>Sign Up</span>
                 <svg width="30" height="11" viewBox="0 0 30 11">
                   <use xlink:href="img/sprite_auto.svg#icon-arrow"></use>
@@ -683,7 +684,7 @@
     </footer>
   </div>
 
-  <section class="popup-login">
+  <section class="popup-login" id="modal-1">
     <div class="popup-login__dialog">
 
       <div class="popup-login__image">
@@ -700,17 +701,19 @@
       </div>
 
       <div class="popup-login__form">
-        <form action="https://echo.htmlacademy.ru" method="GET">
+        <form action="https://echo.htmlacademy.ru" method="POST">
           <div class="popup-login__form-field">
-            <label class="hidden" for="input-1">Введие почту</label>
-            <input type="email" name="mail" id="input-1" placeholder="Your E-mail" required>
+            <label class="hidden" for="input-1">Your E-mail</label>
+            <input type="email" name="mail" id="input-1" placeholder="Your E-mail"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
           </div>
           <div class="popup-login__form-field">
             <label class="hidden" for="input-2">Введите пароль</label>
-            <input type="password" name="password" id="input-2" placeholder="Password" required>
+            <input type="password" name="password" id="input-2" placeholder="Password" minlength="5" maxlength="20"
+              required>
             <a href="#">Forgot your password?</a>
           </div>
-          <button class="btn-popup" type="button">Log In</button>
+          <button class="btn-popup" type="submit">Log In</button>
         </form>
       </div>
       <div class="popup-login__signup">

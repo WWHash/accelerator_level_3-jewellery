@@ -132,8 +132,9 @@
             <h2>The good stuff in your inbox</h2>
             <p>News and updates from CH. No spam, we promise.</p>
             <form action="https://echo.htmlacademy.ru/courses">
-              <input type="email" name="subscription" placeholder="Your E-mail">
-              <button class="footer__form-btn" type="button">
+              <input type="email" name="subscription" placeholder="Your E-mail"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <button class="footer__form-btn" type="submit">
                 <span>Sign Up</span>
                 <svg width="30" height="11" viewBox="0 0 30 11">
                   <use xlink:href="img/sprite_auto.svg#icon-arrow"></use>
