@@ -61,6 +61,7 @@
   svg {
     fill: none;
     stroke: #a87b62;
+    transform: rotate(180deg);
   }
 }
 // Content
@@ -78,7 +79,7 @@
 // Active accordion
 .questions__accordion-item--active .questions__accordion-btn {
   svg {
-    transform: rotate(180deg);
+    transform: rotate(0);
   }
 }
 .questions__accordion-item--active .questions__accordion-content {
@@ -94,11 +95,20 @@
   .questions {
     margin-bottom: 75px;
   }
+  .questions__accordion-item {
+    padding-bottom: 0;
+  }
   .questions__accordion-trigger {
     padding-left: 49px;
+    padding-bottom: 39px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
   }
   .questions__accordion-content {
-    padding: 28px 94px 43px 50px;
+    padding: 22px 94px 46px 50px;
   }
 }
 
@@ -116,7 +126,7 @@
   }
 
   .questions__accordion-trigger {
-    padding: 18px 20px 18px 24px;
+    padding: 18px 16px 18px 24px;
 
     h3 {
       font-size: 16px;
@@ -125,6 +135,9 @@
     span {
       display: block;
     }
+  }
+  .questions__accordion-btn {
+    margin-top: -17px;
   }
 
   .questions__accordion-content {
