@@ -1,20 +1,20 @@
-'use strict';
+`use strict`;
 
 // Mobile menu
 
-let nav = document.querySelector('.nav');
-let navToggle = document.querySelector('.nav__burger');
+let nav = document.querySelector(`.nav`);
+let navToggle = document.querySelector(`.nav__burger`);
 
 if (nav && navToggle) {
-  nav.classList.remove('nav--nojs');
+  nav.classList.remove(`nav--nojs`);
 
-  navToggle.addEventListener('click', function () {
-    if (nav.classList.contains('nav--closed')) {
-      nav.classList.remove('nav--closed');
-      nav.classList.add('nav--opened');
+  navToggle.addEventListener(`click`, function () {
+    if (nav.classList.contains(`nav--closed`)) {
+      nav.classList.remove(`nav--closed`);
+      nav.classList.add(`nav--opened`);
     } else {
-      nav.classList.add('nav--closed');
-      nav.classList.remove('nav--opened');
+      nav.classList.add(`nav--closed`);
+      nav.classList.remove(`nav--opened`);
     }
   });
 }
@@ -23,30 +23,30 @@ if (nav && navToggle) {
 const TABLET_MEDIA_QUERY = 1023;
 
 if (window.screen.width < TABLET_MEDIA_QUERY) {
-  let navList = document.querySelector('.nav__menu-list');
-  let navListHidden = document.querySelector('.nav__menu-list--hidden');
-  let navMenu = document.querySelector('.nav__menu');
-  let search = document.querySelector('.nav__search');
-  let login = document.querySelector('.nav__init-item--login');
+  let navList = document.querySelector(`.nav__menu-list`);
+  let navListHidden = document.querySelector(`.nav__menu-list--hidden`);
+  let navMenu = document.querySelector(`.nav__menu`);
+  let search = document.querySelector(`.nav__search`);
+  let login = document.querySelector(`.nav__init-item--login`);
 
   navMenu.insertBefore(search, navList);
   navMenu.insertBefore(login, navListHidden);
 }
 
 // Swiper
-new Swiper('.new-in__slider', {
+new Swiper(`.new-in__slider`, {
   navigation: {
-    nextEl: '.new-in__slider-btn--next',
-    prevEl: '.new-in__slider-btn--prev'
+    nextEl: `.new-in__slider-btn--next`,
+    prevEl: `.new-in__slider-btn--prev`
   },
 
   breakpoints: {
     320: {
       pagination: {
-        el: '.new-in__slider-pagination',
-        type: 'fraction',
+        el: `.new-in__slider-pagination`,
+        type: `fraction`,
         renderFraction: function (currentClass, totalClass) {
-          return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
+          return `<span class=" ${currentClass} "></span> of <span class=" ${totalClass} "></span>`;
         },
       },
       slidesPerView: 2,
@@ -55,11 +55,11 @@ new Swiper('.new-in__slider', {
     },
     768: {
       pagination: {
-        el: '.new-in__slider-pagination',
-        type: 'bullets',
+        el: `.new-in__slider-pagination`,
+        type: `bullets`,
         clickable: true,
         renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
+          return `<span class="${className}">${index + 1}</span>`;
         },
       },
       slidesPerView: 2,
@@ -68,11 +68,11 @@ new Swiper('.new-in__slider', {
     },
     1024: {
       pagination: {
-        el: '.new-in__slider-pagination',
-        type: 'bullets',
+        el: `.new-in__slider-pagination`,
+        type: `bullets`,
         clickable: true,
         renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
+          return `<span class=" ${className} "> ${index + 1} </span>`;
         },
       },
       slidesPerView: 4,
@@ -84,82 +84,82 @@ new Swiper('.new-in__slider', {
 });
 
 // Accordion index.html
-let accordionTrigger = document.querySelectorAll('.questions__accordion-trigger');
-let accordionItem = document.querySelectorAll('.questions__accordion-item');
+let accordionTrigger = document.querySelectorAll(`.questions__accordion-trigger`);
+let accordionItem = document.querySelectorAll(`.questions__accordion-item`);
 if (accordionTrigger && accordionItem) {
   accordionTrigger.forEach(function (accordionItem) {
-    accordionItem.addEventListener('click', function () {
+    accordionItem.addEventListener(`click`, function () {
       let parent = accordionItem.parentNode;
-      if (parent.classList.contains('questions__accordion-item--active')) {
-        parent.classList.remove('questions__accordion-item--active');
+      if (parent.classList.contains(`questions__accordion-item--active`)) {
+        parent.classList.remove(`questions__accordion-item--active`);
       }
       else {
-        document.querySelectorAll('.questions__accordion-item')
-          .forEach((child) => child.classList.remove('questions__accordion-item--active'))
-        parent.classList.add('questions__accordion-item--active');
+        document.querySelectorAll(`.questions__accordion-item`)
+          .forEach((child) => child.classList.remove(`questions__accordion-item--active`))
+        parent.classList.add(`questions__accordion-item--active`);
       }
     })
   })
 }
 
 // Accordion filter catalog.html
-let filterTrigger = document.querySelectorAll('.filter__accordion-trigger');
+let filterTrigger = document.querySelectorAll(`.filter__accordion-trigger`);
 if (filterTrigger) {
   filterTrigger.forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener(`click`, function () {
       let parent = item.parentNode;
-      parent.classList.toggle('filter__accordion-item--active');
+      parent.classList.toggle(`filter__accordion-item--active`);
     })
   })
 }
 // Modals
-let body = document.querySelector('body');
+let body = document.querySelector(`body`);
 
 const getOpenPopup = (openPopup, popup) => {
   openPopup.onclick = (evt) => {
     evt.preventDefault();
-    popup.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    popup.classList.add(`open`);
+    document.body.style.overflow = `hidden`;
   };
 };
 
 const getClosePopup = (closePopup, popup) => {
   closePopup.onclick = (evt) => {
     evt.preventDefault();
-    popup.classList.remove('open');
-    document.body.style.overflow = 'auto';
+    popup.classList.remove(`open`);
+    document.body.style.overflow = `auto`;
   };
 
   let onPopupEscPress = function (evt) {
-    if (evt.key === 'Escape') {
+    if (evt.key === `Escape`) {
       evt.preventDefault();
-      popup.classList.remove('open');
-      document.body.style.overflow = 'auto';
+      popup.classList.remove(`open`);
+      document.body.style.overflow = `auto`;
     }
   };
-  document.addEventListener('keydown', onPopupEscPress);
+  document.addEventListener(`keydown`, onPopupEscPress);
 };
 
-let loginPopup = document.querySelector('.popup-login');
-let loginPopupOpen = document.querySelector('.nav__init-link--login');
-let loginPopupClose = loginPopup.querySelector('.popup-login__close-btn');
+let loginPopup = document.querySelector(`.popup-login`);
+let loginPopupOpen = document.querySelector(`.nav__init-link--login`);
+let loginPopupClose = loginPopup.querySelector(`.popup-login__close-btn`);
 if (loginPopupOpen && loginPopup) {
   getOpenPopup(loginPopupOpen, loginPopup);
   getClosePopup(loginPopupClose, loginPopup);
 }
 
-let filterPopup = document.querySelector('.filter');
-let filterPopupOpen = document.querySelector('.catalog__filter-open-btn');
-let filterPopupClose = document.querySelector('.filter__close-btn');
-if (filterPopup && filterPopupOpen) { //window.location == 'http://localhost:3000/catalog.html'
+let filterPopup = document.querySelector(`.filter`);
+let filterPopupOpen = document.querySelector(`.catalog__filter-open-btn`);
+let filterPopupClose = document.querySelector(`.filter__close-btn`);
+if (filterPopup && filterPopupOpen) {
   getOpenPopup(filterPopupOpen, filterPopup);
   getClosePopup(filterPopupClose, filterPopup);
 };
 
-let addPopup = document.querySelector('.modal-add');
-let addPopupClose = document.querySelector('.modal-add__btn-close');
-let addPopupOpen = document.querySelector('.product__btn-open');
-if (addPopup && addPopupOpen) { //window.location == 'http://localhost:3000/product-card.html'
+let addPopup = document.querySelector(`.modal-add`);
+let addPopupClose = document.querySelector(`.modal-add__btn-close`);
+let addPopupOpen = document.querySelector(`.product__btn-open`);
+if (addPopup && addPopupOpen) {
   getOpenPopup(addPopupOpen, addPopup);
   getClosePopup(addPopupClose, addPopup);
 };
