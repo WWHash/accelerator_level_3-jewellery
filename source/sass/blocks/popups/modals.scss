@@ -351,14 +351,15 @@
   margin-bottom: 14px;
   padding-left: 5px;
   padding-right: 16px;
-  // input {
-  //   font-family: $poppins;
-  //   font-weight: normal;
-  //   font-size: 18px;
-  //   line-height: 130%;
-  //   background-color: transparent;
-  //   border: none;
-  // }
+  input {
+    font-family: $poppins;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 130%;
+    background-color: transparent;
+    border: none;
+    z-index: 50;
+  }
 }
 
 .modal-add__info {

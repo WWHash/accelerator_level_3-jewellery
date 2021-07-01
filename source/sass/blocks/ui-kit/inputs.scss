@@ -9,6 +9,11 @@ input {
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
+  -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
 }
 
 button {
