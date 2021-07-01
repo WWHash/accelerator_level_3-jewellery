@@ -224,8 +224,9 @@
   }
 
   .new-in__slider {
-    width: 290px;
-    height: 251px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 22px;
   }
 
   .new-in__card-image {
@@ -238,7 +239,7 @@
 
 
   .new-in__card {
-    width: 130px;
+    width: 100%;
   }
 
   // .swiper-pagination-current {

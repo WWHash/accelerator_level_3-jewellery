@@ -4,19 +4,23 @@
 
 let nav = document.querySelector(`.nav`);
 let navToggle = document.querySelector(`.nav__burger`);
-
+let catalog = document.querySelector(`.catalog`);
 if (nav && navToggle) {
   nav.classList.remove(`nav--nojs`);
-
   navToggle.addEventListener(`click`, function () {
     if (nav.classList.contains(`nav--closed`)) {
       nav.classList.remove(`nav--closed`);
       nav.classList.add(`nav--opened`);
+      document.body.style.overflowY = `hidden`;
     } else {
       nav.classList.add(`nav--closed`);
       nav.classList.remove(`nav--opened`);
+      document.body.style.overflowY = `auto`;
     }
   });
+}
+if (catalog) {
+  catalog.classList.remove(`catalog--nojs`);
 }
 
 // Jump element

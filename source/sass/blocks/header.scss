@@ -212,6 +212,11 @@
     padding-bottom: 80px;
   }
 
+  .nav--opened.nav {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
   .nav--opened .nav__burger {
     svg {
       stroke: $white;

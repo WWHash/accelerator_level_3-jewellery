@@ -8,6 +8,7 @@ input {
   display: block;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 0;
 }
 
 button {
@@ -26,14 +27,18 @@ button {
   color: $white;
   border: 1px solid $brown;
   cursor: pointer;
+  box-sizing: border-box;
 
   &:hover,
   &:focus {
-    background-color: $white;
-    color: $brown;
+    transition: outline 0.3s ease;
+    color: $main;
+    // background-color: rgba($brown, 0.8);
+    outline: 2px solid $main;
   }
   &:active {
     border-color: rgba($brown, 0.3);
-    color: rgba($brown, 0.3);
+    outline: 2px solid rgba($main, 0.3);
+    color: rgba($main, 0.3);
   }
 }

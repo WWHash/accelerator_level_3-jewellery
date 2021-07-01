@@ -33,7 +33,7 @@
 }
 .filter__accordion-trigger {
   display: flex;
-  padding: 24px 17px 12px 25px;
+  padding: 24px 23px 12px 25px;
   cursor: pointer;
 
 
@@ -48,10 +48,12 @@
 
   &:hover svg,
   &:focus svg {
-    stroke: $brown;
+    stroke: $main;
   }
 }
 .filter__accordion-btn {
+  padding: 0;
+  margin-top: -11px;
   margin-left: auto;
   border: none;
   background-color: transparent;
@@ -60,6 +62,7 @@
   svg {
     fill: none;
     stroke: #a87b62;
+    transform: rotate(180deg);
   }
 }
 .filter__accordion-content {
@@ -68,7 +71,7 @@
 }
 .filter__accordion-item--active .filter__accordion-btn {
   svg {
-    transform: rotate(180deg);
+    transform: rotate(0);
   }
 }
 .filter__accordion-item--active .filter__accordion-content {
@@ -94,7 +97,6 @@
     font-size: 14px;
     line-height: 130%;/* or 23px */
     cursor: pointer;
-
     &::before {
       position: absolute;
       top: 2px;
@@ -104,17 +106,22 @@
       border: 1px solid #a87b62;
       content: '';
     }
+
   }
 }
 .filter__checkbox-item input:checked ~ label::after {
   position: absolute;
-  top: 2px;
-  left: 0;
-  width: 12px;
-  height: 12px;
+  top: 3px;
+  left: 1px;
+  width: 11px;
+  height: 11px;
   border: 1px solid #a87b62;
   background-color: #a87b62;
   content: '';
+}
+.filter__checkbox-item input:hover + label::before,
+.filter__checkbox-item input:focus + label::before {
+  border-color: $main;
 }
 
 .filter__range-control {
@@ -129,6 +136,7 @@
   background-color: #f0eae4;
 }
 .filter__slider-range {
+  position: relative;
   width: 50%;
   height: 2px;
   margin: 0 auto;
@@ -138,7 +146,7 @@
   &::after {
     position: absolute;
     top: -6px;
-    left: 44px;
+    left: -11%;
     width: 15px;
     height: 15px;
     background-color: $brown;
@@ -148,7 +156,7 @@
   }
 
   &::after {
-    left: 147px;
+    left: 92%
   }
 }
 
@@ -174,35 +182,6 @@
     }
   }
 }
-// Filter page
-.filter--page {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-color: #e5e5e5;
-}
-.filter--page .filter__dialog {
-  width: 400px;
-  margin: 0 auto;
-  background-color: $white;
-}
-.filter--page .filter__accordion {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-}
-.filter--page .filter__btn-apply {
-  padding: 0 40px;
-}
-.filter--page .filter__btn-clear {
-  padding: 0 40px 40px 40px;
-}
-.filter--page .filter__slider-range::before {
-  left: 76px;
-}
-.filter--page .filter__slider-range::after {
-  left: 255px;
-}
 
 // Catalog
 .catalog__content {
@@ -227,6 +206,9 @@
 }
 .catalog__card-image {
   margin-bottom: 22px;
+  img {
+    height: auto;
+  }
 }
 .catalog__card-text {
   margin-bottom: 5px;
@@ -314,11 +296,6 @@
 
   .catalog__filter-open {
     display: block;
-    a {
-      display:flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 
   .filter {
@@ -344,6 +321,7 @@
   .filter.open {
     visibility: visible;
     opacity: 1;
+    overflow-y: scroll;
     transition: transform 5s ease-out;
   }
   .filter.open .filter__dialog {
@@ -401,54 +379,45 @@
     padding: 0 40px 40px 40px;
     margin-bottom: 25px;
   }
-  .filter__slider-range::before {
-    left: 76px;
-  }
-  .filter__slider-range::after {
-    left: 253px;
-  }
 
-  .filter--page {
-    display: block;
-    width: 100%;
-    padding-top: 50px;
+    // Filter--nojs
+  .catalog--nojs .filter {
+    position: relative;
+    // width: 100%;
+    padding-top: 0;
     padding-bottom: 50px;
+    background-color: transparent;
     visibility: visible;
     opacity: 1;
   }
-  .filter--page .filter__dialog {
+  .catalog--nojs .filter__dialog {
     width: 400px;
-    margin: 0 auto;
-    background-color: $white;
-    transition: transform 5s ease-out;
+    // background-color: transparent;
+    transition: transform 1s ease-out;
     transform: translateX(0);
   }
-  .filter--page .filter__accordion {
-    border-top: none;
-    border-right: none;
-    border-left: none;
+  .catalog--nojs .catalog__filter-open {
+    display: none;
   }
-  .filter--page .filter__btn-apply {
-    padding: 0 40px;
+  .catalog--nojs .filter__close-btn {
+    display: none;
   }
-  .filter--page .filter__btn-clear {
-    padding: 0 40px 40px 40px;
+  .catalog--nojs .filter__accordion {
+    border: 1px solid $brown;
   }
-  .filter-page .filter__slider-range::before {
-    left: 76px;
+  .catalog--nojs .filter__slider-range::before {
+    left: -8%;
   }
-  .filter--page .filter__slider-range::after {
-    left: 255px;
+  .catalog--nojs .filter__slider-range::after {
+    left: 93%;
+  }
+  .catalog--nojs .filter__btn-apply,
+  .catalog--nojs .filter__btn-clear {
+    padding: 0;
   }
 
   .catalog__content {
     width: 100%;
-  }
-
-  .catalog__card-image {
-    img {
-      height: 208px;
-    }
   }
 
   .catalog__controls .container {
@@ -467,12 +436,6 @@
   .filter__dialog {
     width: 270px;
   }
-  .filter__slider-range::before {
-    left: 47px;
-  }
-  .filter__slider-range::after {
-    left: 157px;
-  }
   .filter__btn-apply {
     margin-bottom: 25px;
     padding: 0 20px;
@@ -484,12 +447,6 @@
 
   .filter--page .filter__dialog {
     width: 290px;
-  }
-  .filter--page .filter__slider-range::before {
-    left: 47px;
-  }
-  .filter-page .filter__slider-range::after {
-    left: 170px;
   }
   .catalog {
     margin-bottom: 28px;
@@ -503,12 +460,8 @@
     gap: 30px;
     row-gap: 21px;
   }
-
   .catalog__card-image {
     margin-bottom: 17px;
-    img {
-      height: 136px;
-    }
   }
 
   .catalog__controls {

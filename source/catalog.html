@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="Ювелирные изделия, блог, галлерея">
+  <meta name="description" content="Ювелирные изделия, блог, галерея">
   <title>Jewerely catalog</title>
   <link rel="preload" href="fonts/Poppins-Medium.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
@@ -13,7 +15,7 @@
 <body>
   <header id="header" class="header">
 
-    <nav class="nav">
+    <nav class="nav nav--nojs">
       <div class="container">
         <div class="nav__top">
 
@@ -107,10 +109,10 @@
         </div>
       </section>
 
-      <section class="catalog">
+      <section class="catalog catalog--nojs">
         <div class="container">
           <div class="catalog__filter-open">
-            <a class="catalog__filter-open-btn btn-popup" href="filter.html">Filter</a>
+            <button class="catalog__filter-open-btn btn-popup" type="button">Filter</button>
           </div>
           <!-- filter -->
           <div class="filter" id="filter">
@@ -130,6 +132,7 @@
                       <div class="filter__accordion-trigger">
                         <h3>Product</h3>
                         <button class="filter__accordion-btn" type="button">
+                          <span class="hidden">Копка</span>
                           <svg width="17" height="10" viewBox="0 0 17 10">
                             <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
                           </svg>
@@ -161,6 +164,7 @@
                       <div class="filter__accordion-trigger">
                         <h3>Material</h3>
                         <button class="filter__accordion-btn" type="button">
+                          <span class="hidden">Копка</span>
                           <svg width="17" height="10" viewBox="0 0 17 10">
                             <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
                           </svg>
@@ -184,6 +188,7 @@
                       <div class="filter__accordion-trigger">
                         <h3>Collection</h3>
                         <button class="filter__accordion-btn" type="button">
+                          <span class="hidden">Копка</span>
                           <svg width="17" height="10" viewBox="0 0 17 10">
                             <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
                           </svg>
@@ -207,6 +212,7 @@
                       <div class="filter__accordion-trigger">
                         <h3>Price</h3>
                         <button class="filter__accordion-btn" type="button">
+                          <span class="hidden">Копка</span>
                           <svg width="17" height="10" viewBox="0 0 17 10">
                             <use xlink:href="img/sprite_auto.svg#icon-toparrow"></use>
                           </svg>
@@ -223,7 +229,7 @@
 
                   </div>
                   <div class="filter__btn-apply">
-                    <button class="btn-popup" type="button">Apply</button>
+                    <button class="btn-popup" type="submit">Apply</button>
                   </div>
                   <div class="filter__btn-clear">
                     <button class="btn-popup" type="reset">Clear All</button>
@@ -721,7 +727,7 @@
         </form>
       </div>
       <div class="popup-login__signup">
-        <p>Don’t have an account?<a>Sign up</a></p>
+        <p>Don’t have an account?<a href="#">Sign up</a></p>
       </div>
 
     </div>

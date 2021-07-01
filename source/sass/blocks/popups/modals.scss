@@ -2,7 +2,7 @@
 .popup-login {
   position: fixed;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   top: 0;
   left: 0;
@@ -17,6 +17,7 @@
 .popup-login.open {
   opacity: 1;
   visibility: visible;
+  overflow-y: scroll;
 }
 .popup-login.open .popup-login__dialog {
   transform: translateY(0);
@@ -27,6 +28,7 @@
   display: flex;
   flex-direction: column;
   width: 430px;
+  margin-top: 100px;
   background-color: #f0eae4;
   overflow: hidden;
   transform: translateY(-50px);
@@ -48,13 +50,13 @@
 // Popap close
 .popup-login__close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 22px;
+  right: 11px;
 
   button {
     position: relative;
-    width: 14px;
-    height: 14px;
+    width: 25px;
+    height: 25px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -64,7 +66,7 @@
       position: absolute;
       top: 4px;
       left: 0;
-      width: 14px;
+      width: 18px;
       height: 2px;
       background-color: $main;
       content: "";
@@ -133,11 +135,14 @@
 }
 
 .popup-login__form-field {
-  margin-bottom: 35px;
+  margin-bottom: 23px;
 
   a {
     display: block;
-    margin-top: 15px;
+    width: 150px;
+    margin-top: 3px;
+    margin-bottom: 12px;
+    margin-left: auto;
     font-family: $poppins;
     font-weight: 500;
     font-size: 12px;
@@ -181,7 +186,7 @@
 // Modal add
 .modal-add {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -200,15 +205,17 @@
   display: flex;
   flex-direction: column;
   width: 500px;
+  margin-top: 284px;
   background-color: $white;
   overflow: hidden;
   transform: translateY(-50px);
   transition: .2s;
   z-index: 20;
+  box-sizing: border-box;
 
   h2 {
     margin: 0;
-    margin-top: 55px;
+    margin-top: 47px;
     font-family: $cormorant;
     font-weight: bold;
     font-size: 26px;
@@ -220,6 +227,7 @@
 .modal-add.open {
   visibility: visible;
   opacity: 1;
+  overflow-y: scroll;
 }
 .modal-add.open .modal-add__dialog {
   transform: translateY(0);
@@ -227,20 +235,20 @@
 
 .modal-add__close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 17px;
+  right: 13px;
   button {
     position: relative;
-    width: 14px;
-    height: 14px;
+    width: 25px;
+    height: 25px;
     background-color: transparent;
     border: none;
     cursor: pointer;
     &::before,
     &::after {
       position: absolute;
-      top: 4px;
-      left: -1px;
+      top: 10px;
+      left: 3px;
       width: 16px;
       height: 2px;
       background-color: $main;
@@ -266,8 +274,8 @@
 
 .modal-add__card {
   display: flex;
-  padding: 55px 35px;
-  margin-bottom: 20px;
+  padding: 46px 1px 36px 35px;
+  margin-bottom: 16px;
   border-bottom: 1px solid #f6f5f4;
 }
 .modal-add__card-img {
@@ -276,7 +284,7 @@
 }
 .modal-add__card-text {
   h3 {
-    margin: 0 0 10px;
+    margin: -3px 0 7px;
     font-family: $cormorant;
     font-weight: bold;
     font-size: 18px;
@@ -291,14 +299,15 @@
   }
 }
 .modal-add__card-option {
-  width: 14px;
+  width: 10%;
   margin-left: auto;
 }
 .modal-add__card-option-btn {
+  margin-top: -3px;
+  margin-bottom: 13px;
   button {
-    width: 14px;
+    width: 9px;
     height: 14px;
-    margin-left: auto;
     margin-bottom: 10px;
     position: relative;
     background-color: transparent;
@@ -354,7 +363,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 35px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 
   p {
     margin: 0;
@@ -398,37 +407,159 @@
   text-align: center;
 }
 
+// Tablet
+@media (max-width: $tablet-width) {
+  .popup-login__dialog {
+    width: 442px;
+    margin-top: 80px;
+  }
+  .popup-login__close {
+    button {
+      width: 22px;
+      height: 20px;
+      &::before,
+      &::after {
+        top: 9px;
+        width: 24px;
+        height: 3px;
+      }
+    }
+  }
+  .popup-login__form {
+    padding: 0 51px;
+  }
+
+  .modal-add__dialog {
+    margin-top: 258px;
+  }
+  .modal-add__card {
+    padding: 46px 30px 36px;
+  }
+  .modal-add__card-img {
+    width: 88px;
+    margin-right: 20px;
+  }
+  .modal-add__info {
+    padding: 0 30px ;
+  }
+  .modal-add__buttons {
+    padding: 0 30px;
+  }
+}
+
 // Mobile
 @media (max-width: $mobile-width) {
   .popup-login__dialog {
     width: 270px;
+    margin-top: 50px;
+    h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      line-height: 130%;
+    }
   }
   .popup-login__form {
     padding: 0 15px;
   }
+  .popup-login__image {
+    margin-bottom: 37px;
+    img {
+      height: 84px;
+    }
+  }
+  .popup-login__close button::after,
+  .popup-login__close button::before {
+    top: 2px;
+    left: 11px;
+    width: 18px;
+    height: 2px;
+}
+  .popup-login__form-field {
+    margin-bottom: 19px;
+    a {
+      margin-bottom: 7px;
+    }
+  }
+  .popup-login__signup {
+    margin-bottom: 37px;
+}
 
   .modal-add__dialog {
     width: 290px;
+    margin-top: 117px;
 
     h2 {
-      margin-top: 45px;
+      margin-top: 39px;
+      padding: 0 40px;
+      font-size: 24px;
+      line-height: 120%;
     }
   }
+  .modal-add__close {
+    position: absolute;
+    top: 17px;
+    right: 14px;
+
+    button {
+      width: 16px;
+      height: 16px;
+      &::before,
+      &::after {
+        width: 18px;
+      }
+    }
+}
   .modal-add__card {
-    padding: 40px 15px 30px 15px;
+    padding: 34px 15px 14px;
+    margin-bottom: 21px;
+  }
+  .modal-add__card-img {
+    width: 70px;
+    margin-right: 15px;
+    img {
+      width: 70px;
+      height: 63px;
+    }
+  }
+  .modal-add__card-text {
+    h3 {
+      font-size: 16px;
+      line-height: 130%;
+    }
+    span {
+      font-size: 16px;
+      line-height: 130%;
+    }
   }
   .modal-add__info {
     flex-direction: column;
     padding: 0 15px;
+    margin-bottom: 31px;
+    p {
+      font-size: 12px;
+      line-height: 130%;
+    }
   }
   .modal-add__info-card {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
+  }
+  .modal-add__card-option {
+    width: 13px;
+  }
+
+  .modal-add__card-option-btn {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .modal-add__card-option-out {
+    margin-bottom: 5px;
   }
 
   .modal-add__buttons {
     flex-direction: column;
     row-gap: 20px;
     padding: 0 15px;
+    margin-bottom: 45px;
   }
 
   .modal-add__btn--continue {
