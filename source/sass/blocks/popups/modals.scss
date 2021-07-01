@@ -205,7 +205,7 @@
   display: flex;
   flex-direction: column;
   width: 500px;
-  margin-top: 284px;
+  margin-top: 372px;
   background-color: $white;
   overflow: hidden;
   transform: translateY(-50px);
@@ -249,7 +249,7 @@
       position: absolute;
       top: 10px;
       left: 3px;
-      width: 16px;
+      width: 18px;
       height: 2px;
       background-color: $main;
       transform: rotate(45deg);
@@ -274,7 +274,7 @@
 
 .modal-add__card {
   display: flex;
-  padding: 46px 1px 36px 35px;
+  padding: 46px 1px 33px 35px;
   margin-bottom: 16px;
   border-bottom: 1px solid #f6f5f4;
 }
@@ -304,7 +304,7 @@
 }
 .modal-add__card-option-btn {
   margin-top: -3px;
-  margin-bottom: 13px;
+  margin-bottom: 15px;
   button {
     width: 9px;
     height: 14px;
@@ -348,15 +348,17 @@
   }
 }
 .modal-add__card-option-out {
-  margin-bottom: 10px;
-  input {
-    font-family: $poppins;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 130%;
-    background-color: transparent;
-    border: none;
-  }
+  margin-bottom: 14px;
+  padding-left: 5px;
+  padding-right: 16px;
+  // input {
+  //   font-family: $poppins;
+  //   font-weight: normal;
+  //   font-size: 18px;
+  //   line-height: 130%;
+  //   background-color: transparent;
+  //   border: none;
+  // }
 }
 
 .modal-add__info {
@@ -414,6 +416,8 @@
     margin-top: 80px;
   }
   .popup-login__close {
+    top: 19px;
+    right: 20px;
     button {
       width: 22px;
       height: 20px;
@@ -433,7 +437,7 @@
     margin-top: 258px;
   }
   .modal-add__card {
-    padding: 46px 30px 36px;
+    padding: 46px 0 29px 29px;
   }
   .modal-add__card-img {
     width: 88px;
@@ -444,6 +448,16 @@
   }
   .modal-add__buttons {
     padding: 0 30px;
+  }
+  .modal-add__card-option {
+    width: 9%;
+}
+  .modal-add__card-option-btn {
+    margin-top: 1px;
+    margin-bottom: 15px;
+  }
+  .modal-add__card-option-out {
+    margin-bottom: 11px;
   }
 }
 
@@ -497,8 +511,8 @@
   }
   .modal-add__close {
     position: absolute;
-    top: 17px;
-    right: 14px;
+    top: 11px;
+    right: 18px;
 
     button {
       width: 16px;
@@ -510,7 +524,7 @@
     }
 }
   .modal-add__card {
-    padding: 34px 15px 14px;
+    padding: 34px 15px 11px;
     margin-bottom: 21px;
   }
   .modal-add__card-img {
@@ -549,7 +563,7 @@
 
   .modal-add__card-option-btn {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
   }
   .modal-add__card-option-out {
     margin-bottom: 5px;

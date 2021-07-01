@@ -523,7 +523,11 @@
 
       <div class="popup-login__image">
         <picture>
-          <img src="img/popap-desktop@1x.jpg" width="430" height="138" alt="popap-image">
+          <source type="image/webp" media="(max-width: 767px)" srcset="img/popap-mob@1x.webp 1x, img/popap-mob@2x.webp 2x">
+          <source type="image/webp" media="(max-width: 1023px)" srcset="img/popap-tab@1x.webp 1x, img/popap-tab@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 1024px)" srcset="img/popap-desktop@1x.webp 1x, img/popap-desktop@2x.webp 2x">
+          <!--  -->
+          <img src="img/popap-desktop@1x.jpg" srcset="img/popap-desktop@1x.jpg 1x, img/popap-desktop@2x.jpg 2x" width="430" height="138" alt="popap-image">
         </picture>
       </div>
       <h2>Log In</h2>
@@ -577,9 +581,9 @@
           <div class="modal-add__card-option-btn modal-add__card-option-btn--plus">
             <button type="button"><span class="hidden">Plus</span></button>
           </div>
-          <div class="modal-add__card-option-out">
-            <label class="hidden" for="modal-add__out"></label>
-            <input id="modal-add__out" type="number" value="1">
+          <div class="modal-add__card-option-out">1
+            <!-- <label class="hidden" for="modal-add__out"></label>
+            <input id="modal-add__out" type="number" name="out" value="1"> -->
           </div>
           <div class="modal-add__card-option-btn modal-add__card-option-btn--minus">
             <button type="button"><span class="hidden">Minus</span></button>
