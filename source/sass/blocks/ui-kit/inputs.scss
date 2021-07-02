@@ -3,17 +3,19 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
 }
+input, input:before, input:after {
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}
 
 input {
   display: block;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
-  -webkit-user-select: initial;
-      -khtml-user-select: initial;
-      -moz-user-select: initial;
-      -ms-user-select: initial;
-      user-select: initial;
 }
 
 button {
