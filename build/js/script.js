@@ -25,17 +25,29 @@ if (catalog) {
 
 // Jump element
 const TABLET_MEDIA_QUERY = 1023;
-
+let navList = document.querySelector(`.nav__menu-list`);
+let navListHidden = document.querySelector(`.nav__menu-list--hidden`);
+let navMenu = document.querySelector(`.nav__menu`);
+let topHeader = document.querySelector('.nav__top');
+let logo = document.querySelector('.nav__logo');
+let initList = document.querySelector('.nav__init-list');
+let bas = document.querySelector('.nav__init-item--bas');
+let search = document.querySelector(`.nav__search`);
+let login = document.querySelector(`.nav__init-item--login`);
 if (window.screen.width < TABLET_MEDIA_QUERY) {
-  let navList = document.querySelector(`.nav__menu-list`);
-  let navListHidden = document.querySelector(`.nav__menu-list--hidden`);
-  let navMenu = document.querySelector(`.nav__menu`);
-  let search = document.querySelector(`.nav__search`);
-  let login = document.querySelector(`.nav__init-item--login`);
-
   navMenu.insertBefore(search, navList);
   navMenu.insertBefore(login, navListHidden);
 }
+window.addEventListener(`resize`, function () {
+  if (window.screen.width < TABLET_MEDIA_QUERY) {
+    navMenu.insertBefore(search, navList);
+    navMenu.insertBefore(login, navListHidden);
+  }
+  else {
+    topHeader.insertBefore(search, logo);
+    initList.insertBefore(login, bas);
+  }
+});
 
 // Swiper
 new Swiper(`.new-in__slider`, {
@@ -116,14 +128,28 @@ if (filterTrigger) {
     })
   })
 }
+
 // Modals
+let loginPopup = document.querySelector(`.popup-login`);
+let loginPopupOpen = document.querySelector(`.nav__init-link--login`);
+let loginPopupClose = loginPopup.querySelector(`.popup-login__close-btn`);
+let filterPopup = document.querySelector(`.filter`);
+let filterPopupOpen = document.querySelector(`.catalog__filter-open-btn`);
+let filterPopupClose = document.querySelector(`.filter__close-btn`);
+let addPopup = document.querySelector(`.modal-add`);
+let addPopupClose = document.querySelector(`.modal-add__btn-close`);
+let addPopupOpen = document.querySelector(`.product__btn-open`);
+
 let body = document.querySelector(`body`);
+let lastFocusedElement;
 
 const getOpenPopup = (openPopup, popup) => {
   openPopup.onclick = (evt) => {
     evt.preventDefault();
+    lastFocusedElement = document.activeElement;
     popup.classList.add(`open`);
     document.body.style.overflow = `hidden`;
+    loginPopupClose.focus();
   };
 };
 
@@ -132,6 +158,7 @@ const getClosePopup = (closePopup, popup) => {
     evt.preventDefault();
     popup.classList.remove(`open`);
     document.body.style.overflow = `auto`;
+    lastFocusedElement.focus();
   };
 
   let onPopupEscPress = function (evt) {
@@ -144,25 +171,14 @@ const getClosePopup = (closePopup, popup) => {
   document.addEventListener(`keydown`, onPopupEscPress);
 };
 
-let loginPopup = document.querySelector(`.popup-login`);
-let loginPopupOpen = document.querySelector(`.nav__init-link--login`);
-let loginPopupClose = loginPopup.querySelector(`.popup-login__close-btn`);
 if (loginPopupOpen && loginPopup) {
   getOpenPopup(loginPopupOpen, loginPopup);
   getClosePopup(loginPopupClose, loginPopup);
 }
-
-let filterPopup = document.querySelector(`.filter`);
-let filterPopupOpen = document.querySelector(`.catalog__filter-open-btn`);
-let filterPopupClose = document.querySelector(`.filter__close-btn`);
 if (filterPopup && filterPopupOpen) {
   getOpenPopup(filterPopupOpen, filterPopup);
   getClosePopup(filterPopupClose, filterPopup);
 };
-
-let addPopup = document.querySelector(`.modal-add`);
-let addPopupClose = document.querySelector(`.modal-add__btn-close`);
-let addPopupOpen = document.querySelector(`.product__btn-open`);
 if (addPopup && addPopupOpen) {
   getOpenPopup(addPopupOpen, addPopup);
   getClosePopup(addPopupClose, addPopup);

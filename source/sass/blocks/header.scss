@@ -285,9 +285,9 @@
       border-radius: 21px;
       background-color: rgba($white, 0.15);
       color: $white;
-      ::placeholder {
-        display: none;
-      }
+    }
+    input::placeholder {
+      color: transparent;
     }
 
   }
@@ -316,6 +316,7 @@
     padding: 0;
     margin-left: 45px;
     margin-right: 45px;
+    margin-bottom: 50px;
 
     a {
       font-size: 18px;
@@ -328,7 +329,6 @@
       }
     }
   }
-
 
 
   .nav--nojs {
