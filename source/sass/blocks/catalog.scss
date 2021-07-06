@@ -79,6 +79,14 @@
   padding-bottom: 0;
 }
 
+.js-on .filter__accordion-item--active .filter__accordion-content {
+  display: block;
+}
+
+.filter__accordion:not(.js-on) .filter__accordion-content {
+  display: block;
+}
+
 .filter__checkbox-list {
   padding: 0;
   margin: 0 0 24px;

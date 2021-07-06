@@ -120,7 +120,10 @@ if (accordionTrigger && accordionItem) {
 
 // Accordion filter catalog.html
 let filterTrigger = document.querySelectorAll(`.filter__accordion-trigger`);
-if (filterTrigger) {
+let filterAccordeon = document.querySelector(`.filter__accordion`);
+
+if (filterAccordeon) {
+  filterAccordeon.classList.add(`js-on`);
   filterTrigger.forEach(function (item) {
     item.addEventListener(`click`, function () {
       let parent = item.parentNode;
