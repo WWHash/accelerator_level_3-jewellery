@@ -144,31 +144,38 @@ let addPopupClose = document.querySelector(`.modal-add__btn-close`);
 let addPopupOpen = document.querySelector(`.product__btn-open`);
 
 let body = document.querySelector(`body`);
+let focusElements = document.querySelectorAll(`*[data-focus]`);
 let lastFocusedElement;
 
 const getOpenPopup = (openPopup, popup) => {
-  openPopup.onclick = (evt) => {
+  openPopup.addEventListener(`click`, (evt) => {
     evt.preventDefault();
     lastFocusedElement = document.activeElement;
     popup.classList.add(`open`);
     document.body.style.overflow = `hidden`;
-    popup.focus();
-  };
+    for (let i = 0; i < focusElements.length; i++) {
+      let focusElement = focusElements[i];
+      focusElement.focus();
+    }
+  });
 };
 
 const getClosePopup = (closePopup, popup) => {
-  closePopup.onclick = (evt) => {
+  closePopup.addEventListener(`click`, (evt) => {
     evt.preventDefault();
     popup.classList.remove(`open`);
     document.body.style.overflow = `auto`;
     lastFocusedElement.focus();
-  };
+    openPopup.removeEventListener(`click`);
+    closePopup.removeEventListener(`click`);
+  });
 
   let onPopupEscPress = function (evt) {
     if (evt.key === `Escape`) {
       evt.preventDefault();
       popup.classList.remove(`open`);
       document.body.style.overflow = `auto`;
+      lastFocusedElement.focus();
     }
   };
   document.addEventListener(`keydown`, onPopupEscPress);

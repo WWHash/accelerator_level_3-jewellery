@@ -654,7 +654,7 @@
     </footer>
   </div>
 
-  <section class="popup-login" id="myModal" aria-hidden="true" tabindex="0">
+  <section class="popup-login" id="myModal" aria-hidden="true">
     <div class="popup-login__dialog" role="dialog" aria-modal="true">
 
       <div class="popup-login__image">
@@ -669,7 +669,7 @@
       <h2>Log In</h2>
 
       <div class="popup-login__close">
-        <button class="popup-login__close-btn" type="button">
+        <button tabindex="6" class="popup-login__close-btn" type="button">
           <span class="hidden">Закрыть</span>
         </button>
       </div>
@@ -677,19 +677,19 @@
       <div class="popup-login__form">
         <form action="https://echo.htmlacademy.ru" method="POST">
           <div class="popup-login__form-field">
-            <input type="email" name="mail" id="input-1" placeholder="Your E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="">
+            <input tabindex="1" data-focus="focus" type="email" name="mail" id="input-1" placeholder="Your E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="">
             <label class="hidden" for="input-1">Your E-mail</label>
           </div>
           <div class="popup-login__form-field">
-            <input type="password" name="password" id="input-2" placeholder="Password" minlength="5" maxlength="20" required="">
+            <input tabindex="2" type="password" name="password" id="input-2" placeholder="Password" minlength="5" maxlength="20" required="">
             <label class="hidden" for="input-2">Password</label>
-            <a href="#">Forgot your password?</a>
+            <a tabindex="3" href="#">Forgot your password?</a>
           </div>
-          <button class="btn-popup" type="submit">Log In</button>
+          <button tabindex="4" class="btn-popup" type="submit">Log In</button>
         </form>
       </div>
       <div class="popup-login__signup">
-        <p>Don’t have an account?<a href="#">Sign up</a></p>
+        <p>Don’t have an account?<a tabindex="5" href="#">Sign up</a></p>
       </div>
 
     </div>
