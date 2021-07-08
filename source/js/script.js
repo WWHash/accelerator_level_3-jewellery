@@ -142,21 +142,19 @@ let filterPopupClose = document.querySelector(`.filter__close-btn`);
 let addPopup = document.querySelector(`.modal-add`);
 let addPopupClose = document.querySelector(`.modal-add__btn-close`);
 let addPopupOpen = document.querySelector(`.product__btn-open`);
-
 let body = document.querySelector(`body`);
-let focusElements = document.querySelectorAll(`*[data-focus]`);
 let lastFocusedElement;
 
 const getOpenPopup = (openPopup, popup) => {
+  let focusElement = popup.querySelector(`*[data-focus]`);
   openPopup.addEventListener(`click`, (evt) => {
     evt.preventDefault();
     lastFocusedElement = document.activeElement;
     popup.classList.add(`open`);
     document.body.style.overflow = `hidden`;
-    for (let i = 0; i < focusElements.length; i++) {
-      let focusElement = focusElements[i];
+    setTimeout(function timeout() {
       focusElement.focus();
-    }
+    }, 0);
   });
 };
 

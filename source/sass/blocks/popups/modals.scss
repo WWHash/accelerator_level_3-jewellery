@@ -13,7 +13,7 @@
   visibility: hidden;
   opacity: 0;
   transition: .8s;
-  z-index: 15;
+  z-index: 10;
 }
 .popup-login.open {
   opacity: 1;
