@@ -143,7 +143,6 @@ let addPopup = document.querySelector(`.modal-add`);
 let addPopupClose = document.querySelector(`.modal-add__btn-close`);
 let addPopupOpen = document.querySelector(`.product__btn-open`);
 let body = document.querySelector(`body`);
-// let focusElements = document.querySelectorAll(`*[data-focus]`);
 let lastFocusedElement;
 
 const getOpenPopup = (openPopup, popup) => {
@@ -153,9 +152,10 @@ const getOpenPopup = (openPopup, popup) => {
     lastFocusedElement = document.activeElement;
     popup.classList.add(`open`);
     document.body.style.overflow = `hidden`;
+    document.querySelector('*:focus').blur();
     setTimeout(function timeout() {
       focusElement.focus();
-    }, 0)
+    }, 0);
   });
 };
 

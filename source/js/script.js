@@ -152,6 +152,7 @@ const getOpenPopup = (openPopup, popup) => {
     lastFocusedElement = document.activeElement;
     popup.classList.add(`open`);
     document.body.style.overflow = `hidden`;
+    document.querySelector('*:focus').blur();
     setTimeout(function timeout() {
       focusElement.focus();
     }, 0);
